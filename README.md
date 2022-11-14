@@ -7,7 +7,7 @@ Graduate course on advanced stochastic dynamics taught at École Centrale Paris 
 * Lecture #6: Stochastic differential equations (SDE); Numerical simulations of SDE; Stochastic Hamiltonian dynamical systems.
 
 ## REFERENCES
-[L. Devroye. *Non Uniform Random Variate Generation*. Springe, New York NY (1986).](https://doi.org/10.1007/978-1-4613-8643-8) Also available at [http://luc.devroye.org/rnbookindex.html.](http://luc.devroye.org/rnbookindex.html)
+[L. Devroye. *Non Uniform Random Variate Generation*. Springer, New York NY (1986).](https://doi.org/10.1007/978-1-4613-8643-8) Also available at [http://luc.devroye.org/rnbookindex.html.](http://luc.devroye.org/rnbookindex.html)
 
 [P. E. Kloeden, E. Platen. *Numerical Solution of Stochastic Differential Equations*, 3rd ed. Springer-Verlag, Berlin (1999).](https://doi.org/10.1007/978-3-662-12616-5)
 
