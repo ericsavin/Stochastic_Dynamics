@@ -1,0 +1,990 @@
+% $Header: /cvsroot/latex-beamer/latex-beamer/solutions/generic-talks/generic-ornate-15min-45min.en.tex,v 1.5 2007/01/28 20:48:23 tantau Exp $
+\def\figs{/Users/ericsavin/Documents/Cours/MG3401-DynSto/Figs}
+\def\webDOI{http://dx.doi.org}
+\def\Onera{ONERA}
+\def\ECP{CentraleSup\'elec}
+
+\documentclass{beamer}
+
+% This file is a solution template for:
+
+% - Giving a talk on some subject.
+% - The talk is between 15min and 45min long.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Berkeley}
+  % or ...
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+
+\usepackage[english]{babel}
+% or whatever
+
+\usepackage[latin1]{inputenc}
+% or whatever
+
+%\usepackage{mathtime}
+\usefonttheme{serif}
+%\usefonttheme{professionalfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multimedia}
+\usepackage{mathrsfs}
+
+%\usepackage[pdftex, pdfborderstyle={/S/U/W 1}]{hyperref}
+\usepackage{hyperref}
+
+\newcommand{\ci}{\mathrm{i}}
+\newcommand{\trace}{\operatorname{Tr}}
+\newcommand{\Nset}{\mathbb{N}}
+\newcommand{\Zset}{\mathbb{Z}}
+\newcommand{\Rset}{\mathbb{R}}
+\newcommand{\Cset}{\mathbb{C}}
+\newcommand{\Sset}{\mathbb{S}}
+\newcommand{\PhaseSpace}{\Omega}
+\newcommand{\id}{\mathrm{d}}
+\newcommand{\iexp}{\operatorname{e}}
+\newcommand{\iD}{\mathrm{D}}
+\newcommand{\iT}{\mathrm{T}}
+\newcommand{\iP}{\mathrm{P}}
+\newcommand{\iS}{\mathrm{S}}
+\newcommand{\itr}{{\sf T}}
+\newcommand{\iinj}{\mathrm{inj}}
+\newcommand{\idis}{\mathrm{dis}}
+\newcommand{\dis}{\id\mu}
+\newcommand{\dig}{\id\gamma}
+\newcommand{\did}{\id\Omega}
+\newcommand{\wg}{\omega}
+\newcommand{\xgj}{x}
+\newcommand{\ygj}{y}
+\newcommand{\zgj}{z}
+\newcommand{\ugj}{u}
+\newcommand{\vgj}{{\mathrm v}}
+\newcommand{\xg}{{\boldsymbol\xgj}}
+\newcommand{\yg}{{\boldsymbol\ygj}}
+\newcommand{\zg}{{\boldsymbol\zgj}}
+%\newcommand{\Zg}{{\bf\zgj}}
+\newcommand{\xigj}{\xi}
+\newcommand{\xig}{{\boldsymbol\xigj}}
+\newcommand{\kgj}{k}
+%\newcommand{\kgh}{\kgj_\ygj}
+\newcommand{\kg}{{\bf\kgj}}
+\newcommand{\Kg}{{\bf K}}
+\newcommand{\qg}{{\bf q}}
+\newcommand{\pg}{{\bf p}}
+\newcommand{\hkg}{{\hat \kg}}
+\newcommand{\hpg}{\hat{\pg}}
+\newcommand{\ug}{{\boldsymbol\ugj}}
+\newcommand{\vg}{{\boldsymbol v}}
+\newcommand{\sg}{{\boldsymbol s}}
+\newcommand{\strain}{\boldsymbol\epsilon}
+\newcommand{\stress}{\boldsymbol\sigma}
+\newcommand{\tenselas}{{\rm {\large C}}}
+\newcommand{\speci}{{\mathrm w}}
+\newcommand{\specij}{{\mathrm W}}
+\newcommand{\speciv}{{\bf \specij}}
+\newcommand{\cjg}[1]{\overline{#1}}
+\newcommand{\eigv}{{\bf b}}
+\newcommand{\eigw}{{\bf c}}
+\newcommand{\eigl}{\lambda}
+\newcommand{\jeig}{\alpha}
+\newcommand{\keig}{\beta}
+\newcommand{\cel}{c}
+\newcommand{\bcel}{{\bf\cel}}
+\newcommand{\deng}{{\mathcal E}}
+\newcommand{\flowj}{\pi}
+\newcommand{\flow}{\boldsymbol\flowj}
+\newcommand{\Flowj}{\Pi}
+\newcommand{\Flow}{\boldsymbol\Flowj}
+\newcommand{\fluxinj}{g}
+\newcommand{\fluxin}{{\bf\fluxinj}}
+\newcommand{\dscat}{\sigma}
+\newcommand{\tdscat}{\Sigma}
+\newcommand{\collop}{{\mathcal Q}}
+\newcommand{\epsd}{\delta}
+\newcommand{\rscat}{\rho}
+\newcommand{\tscat}{\tau}
+\newcommand{\Rscat}{\mathcal{R}}
+\newcommand{\Tscat}{\mathcal{T}}
+\newcommand{\lscat}{\ell}
+\newcommand{\floss}{\eta}
+\newcommand{\mdiff}{{\bf D}}
+\newcommand{\demi}{\frac{1}{2}}
+\newcommand{\domain}{{\mathcal O}}
+\newcommand{\bdomain}{{\mathcal D}}
+\newcommand{\interface}{\Gamma}
+\newcommand{\sinterface}{\gamma_D}
+\newcommand{\normal}{\hat{\bf n}}
+\newcommand{\bnabla}{\boldsymbol\nabla}
+\newcommand{\esp}[1]{\mathbb{E}\{\smash{#1}\}}
+\newcommand{\mean}[1]{\underline{#1}}
+\newcommand{\BB}{\mathbb{B}}
+\newcommand{\II}{{\boldsymbol I}}
+\newcommand{\TA}{\boldsymbol{\Gamma}}
+\newcommand{\Mdisp}{{\mathbf H}}
+\newcommand{\Hamil}{{\mathcal H}}
+\newcommand{\bzero}{{\bf 0}}
+
+\newcommand{\mass}{M}
+\newcommand{\damp}{D}
+\newcommand{\stif}{K}
+\newcommand{\dsp}{S}
+\newcommand{\dof}{q}
+\newcommand{\pof}{p}
+\newcommand{\MM}{{\mathbf\mass}}
+\newcommand{\MD}{{\mathbf\damp}}
+\newcommand{\MK}{{\mathbf\stif}}
+\newcommand{\MS}{{\mathbf\dsp}}
+\newcommand{\Cov}{{\mathbf C}}
+\newcommand{\dofg}{{\mathbf\dof}}
+\newcommand{\pofg}{{\mathbf\pof}}
+\newcommand{\drifts}{{\mathbf v}}
+\newcommand{\drift}{{\underline\drifts}}
+\newcommand{\scat}{{\mathbf a}}
+\newcommand{\diff}{{\boldsymbol\sigma}}
+\newcommand{\load}{F}
+\newcommand{\loadg}{{\mathbf\load}}
+\newcommand{\pdf}{\rho}
+\newcommand{\tpdf}{\pdf_t}
+\newcommand{\fg}{{\mathbf f}}
+\newcommand{\Ugj}{U}
+\newcommand{\Vgj}{V}
+\newcommand{\Xgj}{X}
+\newcommand{\Ygj}{Y}
+\newcommand{\Ug}{{\boldsymbol\Ugj}}
+\newcommand{\Vg}{{\boldsymbol\Vgj}}
+\newcommand{\Qg}{{\mathbf Q}}
+\newcommand{\Pg}{{\mathbf P}}
+\newcommand{\Xg}{{\boldsymbol\Xgj}}
+\newcommand{\Yg}{{\boldsymbol\Ygj}}
+\newcommand{\flux}{{\bf J}}
+\newcommand{\wiener}{W}
+\newcommand{\white}{B}
+\newcommand{\Wiener}{{\mathbf\wiener}}
+\newcommand{\White}{{\mathbf\white}}
+\newcommand{\paraj}{\nu}
+\newcommand{\parag}{{\boldsymbol\paraj}}
+\newcommand{\parae}{\hat{\parag}}
+\newcommand{\erroj}{\epsilon}
+\newcommand{\error}{{\boldsymbol\erroj}}
+\newcommand{\biaj}{b}
+\newcommand{\bias}{{\boldsymbol\biaj}}
+\newcommand{\disp}{{\boldsymbol V}}
+\newcommand{\Fisher}{{\mathcal I}}
+\newcommand{\likelihood}{{\mathcal L}}
+
+\newcommand{\heps}{\varepsilon}
+\newcommand{\roi}{\varrho}
+\newcommand{\jump}[1]{\llbracket{#1}\rrbracket}
+\newcommand{\po}{\operatorname{o}}
+\newcommand{\FFT}[1]{\widehat{#1}}
+\newcommand{\indic}[1]{{\mathbf 1}_{#1}}
+
+\newcommand{\mycite}[1]{\textcolor{red}{#1}}
+\newcommand{\mycitb}[1]{\textcolor{red}{[{\it #1}]}}
+
+\newcommand{\PDFU}{{\mathcal U}}
+\newcommand{\PDFN}{{\mathcal N}}
+\newcommand{\TK}{{\boldsymbol\Pi}}
+\newcommand{\TKij}{\pi}
+\newcommand{\TKi}{{\boldsymbol\pi}}
+\newcommand{\SMi}{\TKij^*}
+\newcommand{\SM}{\TKi^*}
+\newcommand{\lagmuli}{\lambda}
+\newcommand{\lagmul}{{\boldsymbol\lagmuli}}
+\newcommand{\constraint}{{\boldsymbol C}}
+\newcommand{\mconstraint}{\mean{\constraint}}
+
+\newcommand{\mybox}[1]{\fbox{\begin{minipage}{0.93\textwidth}{#1}\end{minipage}}}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{mythe}{Theorem}
+\newtheorem{myprop}{Proposition}
+
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+
+\title[MC simulation]
+{Monte-Carlo simulation}
+
+\subtitle
+{Sampling and estimation} % (optional)
+
+\author[\'E. Savin] % (optional, use only with lots of authors)
+{\'E. Savin\inst{1,2}\\\scriptsize{\texttt{eric.savin@centralesupelec.fr}}}%\inst{1} }
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[\Onera] % (optional, but mostly needed)
+{\inst{1}{Information Processing and Systems Dept.\\\Onera, France}
+\and
+ \inst{2}{Mechanical and Environmental Engineering Dept.\\\ECP, France}}%
+%  Department of Theoretical Philosophy\\
+%  University of Elsewhere}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+%\date[Short Occasion] % (optional)
+\date{}
+
+\subject{Basics of Monte-Carlo simulations}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+%\AtBeginSection[]
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Since this a solution template for a generic talk, very little can
+% be said about how it should be structured. However, the talk length
+% of between 15min and 45min and the theme suggest that you stick to
+% the following rules:  
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+\section{Introduction}
+
+\begin{frame}{When does sampling occur?}{}
+
+\begin{itemize}
+\item The i.i.d. random stiffnesses of a beam (lecture~\#1);
+\item Classical r.v.: exponential, Gamma, $\beta$, $\beta'$, log-normal... (lecture~\#2);
+\item Polynomial chaos expansion for the representation of second-order r.v. (lecture~\#2);
+\item $\Xg\sim p_\Xg(\xg)=\iexp^{-\lagmuli_0-\lagmul\cdot\constraint(\xg)}$ derived from the MaxEnt principle (lecture~\#2);
+\item Karhunen-Lo\`eve expansion of second-order random processes (lecture~\#3);
+\item Spectral expansion of stationary second-order random processes (lecture~\#4).
+\end{itemize}
+
+\end{frame}
+
+\section{Sampling real random variables}
+
+\subsection{Inverse transform method}
+
+\begin{frame}{Inverse transform method}{Principle}
+
+\begin{mydef}
+Uniform probability law $\PDFU(0,1)={\mathbf 1}_{[0,1]}(u)\id u$ and:
+\begin{displaymath}
+m_\Ugj=\mean{\Ugj}=\demi\,,\quad\sigma_\Ugj=\sqrt{\esp{(\Ugj-m_\Ugj)^2}}=\frac{1}{2\sqrt{3}}\,.
+\end{displaymath}
+\end{mydef}
+
+\begin{mythe}
+Let $F$ be the distribution function of a continuous r.v. $X$. 
+%\begin{itemize}
+%\item $\Rightarrow$
+Then if $\Ugj\sim\PDFU(0,1)$ the r.v. $F^{-1}(\Ugj)$ has distribution function $F$ and the r.v. $F(\Xgj)$ has a uniform probability law.
+%\end{itemize}
+\end{mythe}
+\vspace{-0.2truecm}
+\footnotesize{
+\begin{itemize}
+\item $P(F^{-1}(\Ugj)\leq x)=P(\Ugj\leq F(x))=\int_0^{F(x)}\id u=F(x)$\,.
+\item $P(F(\Xgj)\leq u)=P(\Xgj\leq F^{-1}(u))=F(F^{-1}(u))=u$ with the generalized inverse (or quantile) function:
+\begin{displaymath}
+F^{-1}(u)=\operatorname{inf}\{x|F(x)\geq u\}\,,\quad0<u<1\,.
+\end{displaymath}
+\end{itemize}
+}
+
+\end{frame}
+
+
+\begin{frame}{Inverse transform method}{Examples}
+
+\tiny{
+\hspace*{-0.4truecm}\begin{tabular}{lccc}
+PDF & $F$ & $\Xgj=F^{-1}(\Ugj)$ & \textcolor{red}{Equivalent form} \\
+\cline{1-4}
+Exponential ($\sigma>0$)\\
+$\frac{1}{\sigma}\iexp^{-\frac{\xgj}{\sigma}}\indic{\Rset_+}(\xgj)$ & $1-\iexp^{-\frac{\xgj}{\sigma}}$ & $-\sigma\ln(1-\Ugj)$ & \textcolor{red}{$-\sigma\ln(\Ugj)$} \\
+\hline
+Weibull ($\sigma,k>0$)\\
+$\frac{k}{\sigma}(\frac{\xgj}{\sigma})^{k-1}\iexp^{-(\frac{\xgj}{\sigma})^k}\indic{\Rset_+}(\xgj)$ &  $1-\iexp^{-(\frac{\xgj}{\sigma})^k}$ & $\sigma(-\ln(1-\Ugj))^{\frac{1}{k}}$ & \textcolor{red}{$\sigma(-\ln(\Ugj))^{\frac{1}{k}}$} \\
+\hline
+Cauchy\\
+$\frac{\sigma}{\pi[\sigma^2+(\xgj-\mu)^2]}$ & $\demi+\frac{1}{\pi}\arctan(\frac{\xgj-\mu}{\sigma})$ & $\mu+\sigma\tan\pi(\Ugj-\demi)$ & \textcolor{red}{$\mu+\sigma\tan(\pi\Ugj)$} \\
+\hline
+Rayleigh\\
+$\frac{\xgj}{\sigma}\iexp^{-\frac{\xgj^2}{2\sigma^2}}\indic{\Rset_+}(\xgj)$ & $1-\iexp^{-\frac{\xgj^2}{2\sigma^2}}$ & $\sigma\sqrt{-\ln(1-\Ugj)}$ & \textcolor{red}{$\sigma\sqrt{-\ln(\Ugj)}$} \\
+\hline
+Gamma ($k\in\Nset^*$)\\
+$\frac{1}{\sigma\Gamma(k)}(\frac{\xgj}{\sigma})^{k-1}\iexp^{-\frac{\xgj}{\sigma}}\indic{\Rset_+}(\xgj)$ & $\int_0^{\frac{\xgj}{\sigma}}\frac{t^{k-1}}{\Gamma(k)}\iexp^{-t}\id t$ & $-\sigma\sum_{j=1}^k\ln\Ugj_j$ & \\
+\hline
+Triangular\\
+$\frac{2}{\sigma}(1-\frac{\xgj}{\sigma})\indic{[0,\sigma]}(\xgj)$ & $\frac{2}{\sigma}(\xgj-\frac{\xgj^2}{2\sigma})\indic{[0,\sigma]}(\xgj)$ & $\sigma(1-\sqrt{1-\Ugj})$ & \textcolor{red}{$\sigma(1-\sqrt{\Ugj})$} \\
+%$\frac{\gamma(k,\frac{\xgj}{\sigma})}{\Gamma(k)}$
+\end{tabular}}
+
+\end{frame}
+
+\begin{frame}{The case of Gaussian r.v.}
+
+\begin{itemize}
+\item Let $G\sim\PDFN(0,1)$, the distribution function is the error function (erf), which is difficult to inverse:
+\begin{displaymath}
+F(g)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^g\iexp^{-\frac{x^2}{2}}\id x\,.
+\end{displaymath}
+\vspace{-0.3truecm}
+\item \emph{Box-Muller algorithm}: Let $U_1,U_2\sim\PDFU(0,1)$ independent and
+\begin{displaymath}
+\begin{split}
+G_1 &=\sqrt{-2\operatorname{ln}U_1}\cos(2\pi U_2)\,,\\
+G_2 &=\sqrt{-2\operatorname{ln}U_1}\sin(2\pi U_2)\,,\\
+\end{split}
+\end{displaymath}
+then $G_1$ and $G_2$ are i.i.d. normal r.v. $G_1,G_2\sim \PDFN(0,1)$.\\
+{\footnotesize By causality principle $p_G(g)=p_U(h^{-1}(g))\det(\bnabla_{\!g}h^{-1}(g))$, and
+the inverse of $u\mapsto h(u)$ is $h^{-1}(g)=(\exp(-\|g\|^2/2),\frac{1}{2\pi}\arctan(g_2/g_1))$.
+}
+%\item {\bf Remark}: any uniform r.v. on $[0,1]$ is a function of two independent normal r.v.
+\end{itemize}
+
+\end{frame}
+
+\subsection{Acceptance-rejection sampling}
+
+\begin{frame}{Rejection method}
+
+\begin{itemize}
+\item Objective: simulate $X\sim\pi(x)\id x$ where $\pi(x)$ has compact support within $[a,b]$.
+\vspace{0.3truecm}
+\item Basic algorithm for $0<\sup_{x\in[a,b]}\pi(x)\leq K$:
+\begin{enumerate}
+\item $\Ug\sim\PDFU([a,b]\times[0,K])$ a uniform r.v. on $[a,b]\times[0,K]$;
+\item \texttt{if} $U_2\leq\pi(U_1)$ \texttt{then} $X=U_1$, \texttt{else goto} 1.
+\end{enumerate}
+\centering\includegraphics[scale=0.4,angle=-90]{\figs/rejection}
+%\vspace{0.3truecm}
+%\item Generalization for $0<\pi(x)\leq K g(x)$ where $g$ is a known PDF s.t. $g\approx\pi$ and $G\sim g(x)\id x$ is easy to simulate:
+%\begin{enumerate}
+% \item $\Ugj\sim\PDFU([0,1])$ and $G\sim g(x)$ independently;
+% \item \texttt{if} $K\times\Ugj\times g(G)<\pi(G)$ \texttt{then} $X=G$, \texttt{else goto} 1.
+%\end{enumerate}
+%\item The optimum choice $K=\sup_{x\in[a,b]}\frac{\pi(x)}{g(x)}$, $K^{-1}$ is the probability of acceptance.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Rejection method}
+
+\begin{itemize}
+\item Generalization for $0<\pi(x)\leq K g(x)$ where $g$ is a known PDF s.t. $g\approx\pi$ and $G\sim g(x)\id x$ is easy to simulate:
+\begin{enumerate}
+ \item $\Ugj\sim\PDFU(0,1)$ and $G\sim g(x)$ independently;
+ \item \texttt{if} $K\times\Ugj\times g(G)<\pi(G)$ \texttt{then} $X=G$, \texttt{else goto} 1.
+\end{enumerate}
+\item The optimum choice $K=\sup_{x}\frac{\pi(x)}{g(x)}$, and $K^{-1}$ is the probability of acceptance.\\
+%\item {\bf Example}: $\pi(x)=\frac{1}{\sqrt{2\pi}}\iexp^{-\frac{x^2}{2}}$, $g(x)=[\pi(1+x^2)]^{-1}$, then $K=\sqrt{\frac{2\pi}{\iexp}}$
+\vspace{0.2truecm}
+\footnotesize{{\bf Example}: simulate a normal r.v. from a Cauchy r.v.%$\pi(x)=(2\pi)^{-\demi}\iexp^{-\frac{x^2}{2}}$ (normal), $g(x)=[\pi(1+x^2)]^{-1}$ (Cauchy), then $K=\sqrt{\frac{2\pi}{\iexp}}$.\\}
+%\centering\includegraphics[scale=0.2]{\figs/rejectionGauss}
+\begin{columns}
+\column{0.4\textwidth}
+\hspace*{0.8truecm}{\centering\includegraphics[scale=0.27]{\figs/rejectionGauss}}
+\column{0.6\textwidth}
+\hspace*{1.5truecm} Target: $\pi(x)=\frac{1}{\sqrt{2\pi}}\iexp^{-\frac{x^2}{2}}$ \\ \hspace*{1.5truecm} Proposal: $g(x)=[\pi(1+x^2)]^{-1}$, \\ \hspace*{1.5truecm} then $K=\sqrt{2\pi/\iexp}$ and use \\ \hspace*{1.5truecm} $G=\tan(\pi U)$ with $U\sim\PDFU(0,1)$.
+\end{columns}}
+\end{itemize}
+
+\end{frame}
+
+\subsection{Pseudo-random numbers}
+
+\begin{frame}{Pseudo-random number generators PRNGs}{Objectives}
+
+Generate a sequence of pseudo-random numbers of which distribution is close to $\PDFU(0,1)$ with: 
+\begin{itemize}
+\item good statistical properties and uniformness;
+\item long periods;
+\item efficiency vs. computational time;
+\item repeatability (in order to test programs);
+\item ease of implementation for all programming languages;
+\item unpredictability: it should be impossible to infer $U_i$ from the knowledge of $U_{i-1}$ (applications in cryptography).
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Pseudo-random number generators PRNGs}{Linear Congruential Generator}
+
+\begin{itemize}
+\item Pseudo-random numbers $\{U_i\}_{0\leq i\leq m-1}$ following a uniform law may be obtained by a \emph{Linear Congruential Generator} LCG$(a,b,m)$:
+\begin{displaymath}
+\begin{split}
+I_{i} &=(aI_{i-1}+b)\,\operatorname{mod}(m)\,,\quad I_0=\texttt{SEED}\,, \\
+U_i &=\frac{I_i}{m}\,,
+\end{split}
+\end{displaymath}
+with $0<a<m$ (multiplier), $0\leq b<m$ (increment), $0<m$ (modulus), $0\leq I_0<m$ (\texttt{SEED}).\\
+{\footnotesize{{\bf Example}: $a=7^5$, $b=0$ (\emph{Multiplicative} Congruential Generator), $m=2^{31}-1$ is frequently used.}}
+%\item \emph{Mersenne Twister algorithm} (1997).
+\item For $\Ug\in[0,1]^n$ with mutually independent components use $n$ independent versions of $U$.
+%\item For~$\{\theta_i\}$~s.t.~$\esp{\theta_i}=0$,~$\esp{\theta_i\theta_j}=0$,use~$\theta_i=2\sqrt{3}(U_i-\demi)$.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Pseudo-random number generators PRNGs}{Multiple Recursive Generator}
+
+\begin{itemize}
+\item Pseudo-random numbers $\{U_i\}_{0\leq i\leq m-1}$ following a uniform law may be obtained by \emph{Multiple Recursive Generator} MRG$(k,m)$:
+\begin{displaymath}
+\begin{split}
+I_{i} &=(a_1I_{i-1}+\cdots+a_kI_{i-k})\,\operatorname{mod}(m)\,, \\
+U_i &=\frac{I_i}{m}\,,
+\end{split}
+\end{displaymath}
+where $a_k\in\{-(m-1),\dots(m+1)\}$.
+\item {\bf Properties}:
+\begin{itemize}
+\item The period is greater than $m$ and the maximum period is $m^k-1$ whenever $m$ is a prime number; 
+\item Generalization to the multi-dimensional case.
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Pseudo-random number generators PRNGs}{Other examples}
+
+\begin{itemize}
+\item \emph{Combined Multiple Recursive Generator} \texttt{MRG32k3a} ({\footnotesize L'\'Ecuyer 1999}):
+\begin{displaymath}
+\begin{split}
+I_{i} &=(1403580I_{i-2}-810728I_{i-3})\,\operatorname{mod}(2^{32}-209)\,, \\
+J_{i} &=(527612J_{i-1}-1370589J_{i-3})\,\operatorname{mod}(2^{32}-22853)\,, \\
+U_i &=\frac{(I_i-J_i)\,\operatorname{mod}(2^{32}-209)}{2^{32}-209}\,.
+\end{split}
+\end{displaymath}
+\item \emph{Mersenne Twister algorithm} ({\footnotesize because its period is the Mersenne number $2^{19937}-1$, see Matsumoto-Nishimura 1997}):\\
+\footnotesize{\href{http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html}{\textcolor{red}{\texttt{http://www.math.sci.hiroshima-u.ac.jp/$\sim$m-mat/MT/emt.html}}}}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Pseudo-random number generators PRNGs}{Other examples}
+
+\begin{itemize}
+\item \texttt{RANDU} ({\footnotesize IBM 1967}):
+\begin{displaymath}
+\begin{split}
+I_{i} &=65539I_{i-1}\,\operatorname{mod}(2^{31})\,,\; \\
+U_i &=\frac{I_i}{2^{31}}\,,
+\end{split}
+\end{displaymath}
+with $I_0$ odd.
+\end{itemize}
+\vspace{-0.2truecm}
+\begin{center}
+\includegraphics[scale=0.3]{\figs/800px-Randu}
+\end{center}
+\end{frame}
+
+
+\section{Markov chains and Markov algorithms}
+
+\subsection{Definitions}
+
+\begin{frame}{Markov chains}{Basic definition}
+
+\begin{mydef}\begin{itemize}
+\item A Markov\footnote{\tiny{Andre\"{i} Markov (1856--1922): Russian mathematician.}} chain $(\Ug_m,\,m\in\Nset)$ is a sequence of r.v. with values in a finite or countable set $E$ defined by:
+\begin{itemize}
+ \item $E=\{\ug_0,\ug_1,\dots\}$,
+\begin{multline*}
+P(\Ug_{m+1}=\ug_{m+1}|\Ug_0=\ug_0,\Ug_1=\ug_1,\dots\Ug_m=\ug_m)\\=P(\Ug_{m+1}=\ug_{m+1}|\Ug_m=\ug_m)\,,\quad\forall m\in\Nset\,;
+\end{multline*}
+\item its initial probability law $\TKij_{0,j}=P(\Ug_0=\ug_j)$.
+\end{itemize}
+\item A homogeneous Markov chain:
+\begin{multline*}
+P(\Ug_{m+1}=\ug_j|\Ug_m=\ug_i) \\=P(\Ug_m=\ug_j|\Ug_{m-1}=\ug_i)\,,\quad\forall m\in\Nset\,.
+\end{multline*}
+\end{itemize}
+\end{mydef}
+
+\end{frame}
+
+\begin{frame}{Markov chains}{Examples}
+
+\begin{itemize}
+\item Let $(\Vg_m,\,m\in\Nset^*)$ be a sequence of i.i.d. r.v. with values in $F$, and let $f:E\times F\rightarrow E$ be measurable. Then the sequence $(\Ug_m,\,m\in\Nset)$ defined by:
+\begin{displaymath}
+\Ug_{m+1}=f(\Ug_m,\Vg_{m+1})\,,\quad\forall m\in\Nset\,,
+\end{displaymath}
+is an homogeneous Markov chain as soon as $\Vg_m$ is independent of $\Ug_0$.
+\item Random walk in $E=\Zset^2$:
+\begin{displaymath}
+\Ug_{m+1}=\Ug_m+\Vg_{m+1}\,,\quad\forall m\in\Nset\,,
+\end{displaymath}
+with $\Vg_m\in F=\{(-1,0),(0,-1),(+1,0),(0,+1)\}$.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{MCMC methods}{Examples}
+
+\begin{itemize}
+\item Sampling a Markov chain:
+\begin{enumerate}
+\item $\Ug_0\sim\TKi_0$;
+\item \texttt{repeat}
+\begin{itemize}
+\item $\Ug_{m-1}=\ug_i$
+\item $\Ugj\sim\PDFU(0,1)$ and find $j$ s.t.:
+\begin{displaymath}
+\hspace*{-2truecm}\sum_{k=1}^{j-1}P(\Ug_m=\ug_k|\Ug_{m-1}=\ug_i)\leq\Ugj<\sum_{k=1}^{j}P(\Ug_m=\ug_k|\Ug_{m-1}=\ug_i)
+\end{displaymath}
+\item  $\Ug_m=\ug_j$
+\end{itemize}
+\texttt{until} $m=m_\mathrm{final}$.
+\end{enumerate}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Markov chains}{Transition kernel and invariant measure}
+
+\begin{itemize}
+\item A Markov chain is fully characterized by its initial distribution $\TKi_0$ and  its \emph{transition kernel} $\TK(m)$ s.t.:
+\vspace{-0.2truecm}
+\begin{displaymath}
+\TK(m)=[\TKij_{ij}(m)]_{i,j\in E}\,,\;\TKij_{ij}(m)=P(\Ug_m=\ug_j|\Ug_{m-1}=\ug_i)\,.
+\end{displaymath}
+{\footnotesize{{\bf Remarks}:}\begin{itemize}
+\item \footnotesize{$\TK$ is independent of $m$ if the Markov chain is homogeneous.}
+\item \footnotesize{$\TKij_{ii}$ is not necessarily zero.
+\item $\sum_{j\in E}\TKij_{ij}(m)=1$, $\forall i\in E$.}
+\end{itemize}}
+\item An \emph{invariant measure} (or \emph{stationary distribution}) $\smash{\SM=(\SMi_j)_{j\in E}}$ is s.t.:
+\begin{displaymath}
+\SMi_j\geq0,\quad\SMi_j=\sum_{i\in E}\SMi_i\TKij_{ij}(m),\quad\forall j\in E\,,\;\forall m\in\Nset\,,
+\end{displaymath}
+with the normalization $\sum_{j\in E}\SMi_j=1$.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Markov chains}{Classification of the states}
+
+\begin{mydef}
+\begin{itemize}
+\item A Markov chain is \emph{irreducible} if it is possible to reach any state from any other state.
+\item The state $j\in E$ is \emph{transient} if, starting from it, the probability it is never reached again is non-zero; otherwise it is \emph{recurrent}.
+\item A recurrent state is \emph{positive recurrent} if the mean return time is finite: $\esp{\inf\{k\geq1|\Ug_k=\ug_j\}|\Ug_0=\ug_j}<+\infty$.
+\item The state $j\in E$ is \emph{aperiodic} if, starting from it, it can be reached again at any subsequent time with a non-zero probability.
+\end{itemize}
+\end{mydef}
+\footnotesize{If $\TKij_{ij}>0\;\forall i,j\in E$, then the MC is irreducible and aperiodic.}
+
+\end{frame}
+
+\subsection{The ergodic theorem}
+
+\begin{frame}{Markov chains}{Existence of an invariant measure for homogeneous MC}
+
+\begin{mythe}
+\begin{itemize}
+\item If a MC has at least one positive recurrent state, it has an invariant measure. It is unique if in addition the MC is irreducible.
+\item If a MC is irreducible, positive recurrent and aperiodic, then  there exists a unique invariant measure $\SM$ such that $\smash{(\Ug_m)\underset{m\rightarrow+\infty}{\overset{{\mathscr L}}{\longrightarrow}}\SM}$ independently of  $\TKi_0$.
+\end{itemize}
+\end{mythe}
+\footnotesize{
+\begin{itemize}
+\item The latter result is the convergence of the $k$-stage transition $\TK^k$ through the kernel $\TK$ to the invariant measure:
+\begin{displaymath}
+\TK^k=[\TKij_{ij}^{(k)}]_{i,j\in E}\,,\quad\TKij_{ij}^{(k)}=P(\Ug_{m+k}=\ug_j|\Ug_m=\ug_i)\,,
+\end{displaymath}  
+such that if $\smash{\TKi_k=P(\Ug_k=\ug_j)_{j\in E}}$ then $\TKi_k=\TKi_0\TK^k$.
+\item If $\smash{\TKi_0}$ is an invariant measure, then $\smash{\TKi_k=\TKi_0}$ $\forall k\in\Nset$.
+\end{itemize}}
+
+\end{frame}
+
+\begin{frame}{Markov chains}{The ergodic theorem}
+
+\begin{mythe}
+Let $(\Ug_m,\,m\in\Nset)$ be an irreducible, positive recurrent homogeneous MC. Then there exists an invariant measure $\SM$ such that for all regular functions $f$:
+\begin{displaymath}
+\lim_{m\rightarrow+\infty}\esp{f(\Ug_m)}=\lim_{m\rightarrow+\infty}\frac{1}{m}\sum_{k=0}^{m-1}f(\Ug_k)=\sum_{j\in E}\SMi_jf(\ug_j)\;\text{a.s.}
+\end{displaymath}
+\end{mythe}
+\footnotesize{
+\begin{itemize}
+\item The ergodic theorem is an extension of the \emph{Law of Large Numbers} to homogeneous MCs: let $\Xg_1,\Xg_2,\dots\Xg_m$ be $m$ i.i.d. r.v. with the same law $P_\Xg$, then for all regular functions $f$:
+\begin{displaymath}
+\lim_{m\rightarrow+\infty}\frac{1}{m}\sum_{k=1}^mf(\Xg_k)=\esp{f(\Xg)}=\int f(\xg)P_\Xg(\id\xg)\quad\text{a.s.}
+\end{displaymath}
+\item It allows to estimate the invariant measure from one sample chain.
+\end{itemize}}
+\end{frame}
+
+\subsection{Markov chain Monte-Carlo (MCMC)}
+
+\begin{frame}{MCMC methods}{Reversible transition kernels}
+
+\begin{myprop}
+Let $\TKij(\ug_i,\ug_j)=p(\ug_i,\ug_j)+r(\ug_i)\delta(\ug_j-\ug_i)$ where:
+\begin{itemize}
+\item $p(\ug_i,\ug_i)=0$ and a \emph{reversibility condition} holds:
+\begin{displaymath}
+\SM(\ug_i)p(\ug_i,\ug_j)=\SM(\ug_j)p(\ug_j,\ug_i)\,,\quad\forall i,j\in E\,;
+\end{displaymath}
+\item $r(\ug_i)=1-\sum_{j\in E}p(\ug_i,\ug_j)$.
+\end{itemize}
+Then $\SMi(\ug)$ is the invariant density of the MC of which transition kernel is $\TK=\smash{[\TKij(\ug_i,\ug_j)]_{i,j\in E}}$.
+\end{myprop}
+\vspace{-0.5truecm}
+\footnotesize{
+\begin{displaymath}
+\begin{split}
+\sum_{i\in E}\SMi(\ug_i)\TKij(\ug_i,\ug_j) &=\sum_{i\in E}\SMi(\ug_i)p(\ug_i,\ug_j)+\sum_{i\in E}\SMi(\ug_i)r(\ug_i)\delta(\ug_j-\ug_i) \\
+&=\sum_{i\in E}\SMi(\ug_j)p(\ug_j,\ug_i)+\SMi(\ug_j)r(\ug_j) \\
+&=\SMi(\ug_j)(1-r(\ug_j))+\SMi(\ug_j)r(\ug_j) \\
+&=\SMi(\ug_j)\,.
+\end{split}
+\end{displaymath}}
+
+\end{frame}
+
+\begin{frame}{MCMC methods}{Metropolis-Hastings algorithm (1953, 1970)}
+
+\begin{itemize}
+\item Objective: simulate $\Xg\sim C^*\SMi(\xg)\id\xg$, $E\equiv\Omega\subseteq\Rset^n$.
+%\item The Metropolis-Hastings algorithm tells us how to find a $p(\xg,\yg)$ s.t. Let $\tpdf(\ugj|\ugj_i)$ be a transition PDF of a Markov chain $\Ugj$ (\emph{candidate} or \emph{instrumental} or \emph{proposal} distribution) such that:
+\item Let $q(\xg,\yg)\geq 0$ be a \emph{candidate} (or \emph{instrumental} or \emph{proposal}) density s.t. $\operatorname{supp}\SMi(\cdot)\subset\operatorname{supp}q(\xg,\cdot)$ and define the \emph{probability of move}: 
+\begin{displaymath}
+\alpha(\xg,\yg)=\operatorname{min}\left\{\frac{\SMi(\yg)q(\yg,\xg)}{\SMi(\xg)q(\xg,\yg)},1\right\}\,.
+\end{displaymath}
+\vspace{-0.3truecm}
+\begin{enumerate}
+\item $\xg_0\sim\TKi_0(\xg)\id\xg$
+\item \texttt{repeat}
+\begin{itemize}
+\item $\Xg_m=\xg_m$
+\item $\Yg\sim q(\xg_m,\yg)\id\yg$ and $\Ugj\sim\PDFU(0,1)$
+\item \texttt{if} $\Ugj\leq\alpha(\xg_m,\Yg)$ \texttt{then} $\Xg_{m+1}=\Yg$, \texttt{else} $\Xg_{m+1}=\Xg_m$
+\end{itemize}
+\texttt{until} $m=m_\mathrm{final}$.
+\end{enumerate}
+\footnotesize{Assume $\SMi(\xg)q(\xg,\yg)>\SMi(\yg)q(\yg,\xg)$, then $\alpha(\xg,\yg)$ is tuned so that $\alpha(\xg,\yg)q(\xg,\yg)$ satisfies the reversibility condition.}
+\end{itemize}
+%\footnotesize{
+%\begin{itemize}
+%\item Assume $\SMi(\xg)q(\xg,\yg)>\SMi(\yg)q(\yg,\xg)$, then $\alpha(\xg,\yg)$ is tuned so that $\alpha(\xg,\yg)q(\xg,\yg)$ satisfies the reversibility condition.
+%\item One can thus invoke the foregoing Prop.
+%\end{itemize}}
+
+\end{frame}
+
+\begin{frame}{MCMC methods}{Application to the MaxEnt}
+% See Soize, Construction of probability distributions in high dimension using the MaxEnt principle: Applications to stochastic processes, random fields and random matrices. Int. J. Num. Meth. Engng. 76, 1583-1611 (2008).
+
+\begin{itemize}
+\item The MaxEnt principle leads to the non-linear optimization problem of finding $\lagmul\in\Rset^\ell$ s.t.:
+\begin{displaymath}
+{\boldsymbol g}(\lagmul):=\int_{\Rset^n}(\constraint(\xg)-\mconstraint)\iexp^{-\lagmul\cdot(\constraint(\xg)-\mconstraint)}\id\xg=\bzero\,.
+\end{displaymath}
+\item By the ergodic theorem:
+ \begin{displaymath}
+{\boldsymbol g}(\lagmul)\simeq\lim_{m\rightarrow +\infty}\frac{1}{m}\sum_{k=0}^{m-1}\left(\constraint(\Xg_k(\theta))-\mconstraint\right)\,,
+\end{displaymath}
+and by the law of large number for $M\in\Nset$ large enough:
+\begin{displaymath}
+{\boldsymbol g}(\lagmul)\simeq\lim_{n_s\rightarrow +\infty}\frac{1}{n_s}\sum_{k=1}^{n_s}\left(\constraint(\Xg_M(\theta_k))-\mconstraint\right)\,,
+\end{displaymath}
+where $(\Xg_m,\,m\in\Nset)$ is the MC of which invariant density is $\SMi(\xg)=\iexp^{-\lagmul\cdot(\constraint(\xg)-\mconstraint)}$.
+\end{itemize}
+
+\end{frame}
+
+%\AtBeginSection[]
+\section{Estimation}
+
+%\subsection{Estimators, Cram\'er-Rao inequality, and maximum likelihood}
+
+\begin{frame}{When does estimation occur?}{}
+
+\begin{itemize}
+\item Parametrization of \emph{e.g.} Gamma or $\beta$ distributions (Lam\'e's moduli, Poisson's coefficient):
+\begin{itemize}
+\item If $\Xgj\sim\Gamma(k,\frac{1}{\sigma})$ then 
+\begin{displaymath}
+\smash{\mean{\Xgj}}=k\sigma\,,\;\smash{\sigma_\Xgj^2}=k\sigma^2\,,\;\smash{s_\Xgj}=\smash{\frac{2}{\sqrt{k}}}\,,\;\smash{\kappa_\Xgj}=\smash{\frac{6}{k}}\,,\;\text{\emph{etc}.}
+\end{displaymath}
+\item If $\Xgj\sim\beta(k,\frac{1}{\sigma})$ then
+\begin{displaymath}
+\smash{\mean{\Xgj}}=\smash{\frac{k\sigma}{1+k\sigma}}\,,\;\smash{\sigma_\Xgj^2}=\frac{k\sigma^2}{(1+k\sigma)^2(1+\sigma+k\sigma)}\,,\;\text{\emph{etc}.}
+\end{displaymath}
+\end{itemize}
+\item $p_\Xg(\xg)=\iexp^{-\lagmuli_0-\lagmul\cdot\constraint(\xg)}$ where $(\lagmuli_0,\lagmul)$ depend on $\mconstraint$.
+\end{itemize}
+
+\end{frame}
+
+
+%\subsection{Definitions}
+
+\frame{\frametitle{Estimator}
+\framesubtitle{Punctual \& sequential estimation}
+\begin{itemize}
+\item Let $\Xg(\theta)$ be a second order r.v. defined on $(\Omega_\theta,{\mathcal E},P)$ with values in $\Omega_\Xg\subseteq\Rset^n$ and probability distribution $P_\Xg(\id\xg;\parag)$ depending on (deterministic) parameters $\parag\in\Theta\subseteq\Rset^p$.
+\begin{itemize}
+\item Sequential or continuous estimation: estimate $\parag$ from $M$ independent realizations $\xg^{(m)}=\Xg(\theta_m)$, $\theta_m\in\Omega_\theta$, $1\leq m \leq M$;
+\item Punctual estimation: $M=1$.
+\end{itemize}
+\item An estimation is a (measurable) rule $\xg_M\mapsto\parae_M(\xg_M)$, $\xg_M=(\xg^{(1)},\dots\xg^{(M)})$, for calculating the \emph{estimate} $\parae_M(\xg_M)$. The corresponding \emph{estimator} is the r.v. $\parae_M(\Xg_M)$.
+\item The \emph{estimation error} is $\error_M(\Xg_M)=\parae_M(\Xg_M)-\parag$.
+\item Two classes of methods for building estimators: (i)~method of moments and (ii)~maximum likelihood.
+\end{itemize}
+}
+
+\frame{\frametitle{Estimator}
+\framesubtitle{Characterizing an estimator}
+\begin{mydef}
+\begin{itemize}
+\item The bias of the estimator $\bias_M(\parag)=\esp{\error_M(\Xg_M)}$. It is unbiased if $\bias_M=\bzero$ $\forall M$, or asymptotically unbiased if $\underset{M\rightarrow+\infty}{\lim}\bias_M=\bzero$.
+\item The dispersion of the estimator:
+\begin{displaymath}
+\begin{split}
+\disp_M(\parag) &=\esp{\error_M(\Xg_M)\otimes\error_M(\Xg_M)} \\
+&=\Cov_{\parae_M}+\bias_M(\parag)\otimes\bias_M(\parag)\,.
+\end{split}
+\end{displaymath}
+The lower $\trace\Cov_{\parae_M}$ is, the more efficient it is.
+\item The symmetric, positive Fisher information matrix:
+\begin{displaymath}
+[\Fisher_M(\parag)]=\esp{\bnabla_\parag\ln\likelihood(\parag|\Xg_M)\otimes\bnabla_\parag\ln\likelihood(\parag|\Xg_M)}\,,
+\end{displaymath}
+for $\likelihood(\parag|\xg_M):=\prod_{m=1}^Mp_\Xg(\xg^{(m)};\parag)$, $\smash{p_\Xg}=\smash{\frac{\id P_\Xg}{\id\xg}}$.
+\end{itemize}
+\end{mydef}
+}
+
+%\subsection{Cram\'er-Rao inequality}
+
+\frame{\frametitle{Cram\'er-Rao inequality and efficiency}
+
+\begin{mythe}
+The Cram\'er-Rao inequality for the $j$-th parameter:
+\begin{displaymath}
+[\disp_M(\parag)]_{jj}=\esp{\erroj_{M,j}^2(\Xg_M)}\geq\frac{\left(1+\partial_{\paraj_j}\biaj_{M,j}(\parag)\right)^2}{[\Fisher_M(\parag)]_{jj}}\,,
+\end{displaymath}
+with an equality iff $\partial_{\paraj_j}\ln\likelihood(\parag|\xg_M)=\varphi_j(\parag)\erroj_{M,j}(\xg_M)$.
+\end{mythe}
+\vspace{-0.2truecm}
+\begin{itemize}
+\item An estimator is \emph{efficient} if it minimizes its dispersion, thus iff the above condition holds, or:
+\begin{displaymath}
+\esp{\partial_{\paraj_j}\ln\likelihood(\parag|\Xg_M)}=\varphi_j(\parag)\biaj_{M,j}(\parag)\,.
+\end{displaymath}
+\item If it is unbiased $[\disp_M(\parag)]_{jj}\geq[\Fisher_M(\parag)]_{jj}^{-1}$ (Cram\'er-Rao lower bound) and
+\begin{displaymath}
+\esp{\partial_{\paraj_j}\ln\likelihood(\parag|\Xg_M)}=0\,.
+\end{displaymath}
+\end{itemize}
+}
+
+%\subsection{Maximum likelihood}
+
+\frame{\frametitle{Maximum likelihood method}
+\framesubtitle{ML estimator}
+\begin{mydef}
+\begin{itemize}
+ \item Consider the following estimate $\hat{\ell}(\parag)$ of the expected log-likelihood $\ell(\parag)=\esp{\ln p_\Xg(\Xg;\parag)}$ of a single observation:
+\begin{displaymath}
+\hat{\ell}(\parag)=\frac{1}{M}\ln\likelihood(\parag|\xg_M)\,.
+\end{displaymath}
+\item The maximum likelihood (ML) estimator of $\parag$ is:
+\begin{displaymath}
+\parae_{\mathrm{ML}}(\Xg_M)=\arg\max_{\parag\in\Theta}\hat{\ell}(\parag)\,.
+\end{displaymath}
+\end{itemize}
+\end{mydef}
+\footnotesize{
+The likelihood equations relative to the realizations $\xg_M$:
+\begin{displaymath}
+\partial_{\paraj_j}\ln\likelihood(\parag|\xg_M)=\sum_{m=1}^M\partial_{\paraj_j}\ln p_\Xg(\xg^{(m)};\parag)=0\,,\quad 1\leq j\leq p\,.
+\end{displaymath}}
+}
+
+\begin{frame}{Maximum likelihood method}{Properties of the MLE}
+
+\begin{itemize}
+\item Consistency: assume $p_\Xg(\cdot;\parag_1)\neq p_\Xg(\cdot;\parag_2)$ iff $\parag_1\neq\parag_2$, the MLE is asymptotically unbiased and:
+\begin{displaymath}
+%\underset{M\rightarrow+\infty}{\operatorname{l.i.p.}}\parae_{\text{ML}}(\Xg_M)=\parag\,.
+\parae_{\text{ML}}(\Xg_M)\underset{M\rightarrow+\infty}{\overset{{\mathscr P}}{\longrightarrow}}\parag\,.
+\end{displaymath}
+\item Asymptotic normality:
+\begin{displaymath}
+\sqrt{M}\left(\parae_{\text{ML}}(\Xg_M)-\parag\right)\underset{M\rightarrow+\infty}{\overset{{\mathscr L}}{\longrightarrow}}\PDFN\left(0,[\Fisher_1(\parag)]^{-1}\right)\,.
+\end{displaymath}
+\item Efficiency: it achieves the Cram\'er-Rao lower bound asymptotically. Conversely, if an efficient unbiased estimator exists, then it is the MLE and it is unique.
+\item Functional invariance: $\varphi(\parae_{\text{ML}})$ is the MLE of $\varphi(\parag)$.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Maximum likelihood method}{Example~\#1}
+
+Consider $\Xgj\sim\PDFN(\mu,\sigma^2)$ in $\Rset$, \emph{i.e.} $\smash{p_\Xgj(\xgj)}=\smash{\frac{1}{\sqrt{2\pi}\sigma}\iexp^{-\demi(\frac{\xgj-\mu}{\sigma})^2}}$, with $\smash{\paraj_1}=\mu$ and $\smash{\paraj_2}=\smash{\sigma^2}$.
+\begin{itemize}
+\item The likelihood function is:
+\begin{displaymath}
+\likelihood(\parag|\xgj_M)=\left(\frac{1}{2\pi\sigma^2}\right)^{\frac{M}{2}}\exp\left(-\frac{1}{2\sigma^2}\sum_{m=1}^M\left(\xgj^{(m)}-\mu\right)^2\right)\,.
+\end{displaymath}
+\item The ML estimator is:
+\begin{displaymath}
+\begin{split}
+\hat{\mu}_{\text{ML}}(\Xgj_M) &=\frac{1}{M}\sum_{m=1}^M\Xgj^{(m)}\,,\\
+\hat{\sigma}^2_{\text{ML}}(\Xgj_M) &=\frac{1}{M}\sum_{m=1}^M\left(\Xgj^{(m)}-\frac{1}{M}\sum_{n=1}^M\Xgj^{(n)}\right)^2\,.
+\end{split}
+\end{displaymath}
+\item Then $\biaj_{M,1}=0$, $\biaj_{M,2}=-\frac{\sigma^2}{M}$, but is asymptotically unbiased.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Maximum likelihood method}{Example~\#2}
+
+Consider $\Xgj\sim\Gamma(k,\frac{1}{\sigma})$ on $\Rset_+$ with $\paraj=\sigma$:
+\begin{displaymath}
+p_\Xgj(\xgj)=\frac{1}{\sigma\Gamma(k)}\left(\frac{\xgj}{\sigma}\right)^{k-1}\iexp^{-\frac{\xgj}{\sigma}}\indic{\Rset_+}(\xgj)\,,
+\end{displaymath}
+then $\mean{\Xgj}=k\sigma=k\nu$.
+\begin{itemize}
+\item The log-likelihood function is:
+\begin{multline*}
+\hspace*{-1.3truecm}\frac{\ln\likelihood(\paraj|\xgj_M)}{M}=\frac{k-1}{M}\sum_{m=1}^M\ln\xgj^{(m)}-\frac{1}{\sigma M}\sum_{m=1}^M\xgj^{(m)}-k\ln\sigma-\ln\Gamma(k)\,.
+\end{multline*}
+\item The (unbiased) ML estimator is:
+\begin{displaymath}
+k\hat{\sigma}_{\text{ML}}(\Xgj_M)=\frac{1}{M}\sum_{m=1}^M\Xgj^{(m)}\,.
+\end{displaymath}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Maximum likelihood method}{Example~\#2}
+
+Consider the same law but now $\paraj_1=\sigma$ and $\paraj_2=k$, thus $\mean{\Xgj}=k\sigma=\nu_1\nu_2$ and $\sigma_\Xgj^2=k\sigma^2=\nu_1^2\nu_2$.
+\begin{itemize}
+\item The log-likelihood function is unchanged.
+\item But $\hat{\sigma}_{\text{ML}}$ and $\hat{k}_{\text{ML}}$ are given by a system of \emph{non-linear} equations:
+\begin{displaymath}
+\begin{split}
+\hat{k}_{\text{ML}}(\Xgj_M)\hat{\sigma}_{\text{ML}}(\Xgj_M) &=\frac{1}{M}\sum_{m=1}^M\Xgj^{(m)}\,, \\
+\psi_0(\hat{k}_{\text{ML}}(\Xgj_M)) &=\frac{1}{M}\sum_{m=1}^M\ln\left(\frac{\Xgj^{(m)}}{\hat{\sigma}_{\text{ML}}(\Xgj_M)}\right)\,,
+\end{split}
+\end{displaymath}
+where $z\mapsto\psi_0(z)=(\ln\Gamma(z))'$ is the diGamma function.
+\end{itemize}
+
+\end{frame}
+
+
+%\subsection{Exhaustive estimator}
+
+\begin{frame}{Exhaustive estimator}{Definition}
+
+\begin{itemize}
+\item The probability law  of the estimator $\parae_M(\Xg_M)$ should depend on $\parag$ if it is used to retrieve some information on the parameters.
+\item It is called \emph{exhaustive} if it conserves the information on $\parag$ contained in the sample $\xg_M$, \emph{i.e.} $P(\Xg_M|\parae_M(\Xg_M)=\parae)$ does not depend on $\parag$.
+\end{itemize}
+\begin{mydef}
+$\parae_M(\Xg_M)$ is exhaustive iff $\likelihood(\parag|\xg_M)=\tpdf(\xg_M|\parae)g(\parae;\parag)$, where $\tpdf$ is the conditional PDF of $\Xg_M$ provided that $\parae_M(\Xg_M)=\parae$, and $g$ is its PDF.
+\end{mydef}
+
+\end{frame}
+
+\begin{frame}{Exhaustive estimator}{Characterization}
+
+\begin{mythe}
+A sample $\Xg_M$ s.t. $\operatorname{supp}p_\Xg$ does not depend on $\parag$ admits an exhaustive estimator iff:
+\begin{displaymath}
+p_\Xg(\xg;\parag)=\iexp^{a(\xg)\alpha(\parag)+b(\xg)+\beta(\parag)}\,.
+\end{displaymath}
+\end{mythe}
+
+\end{frame}
+
+\begin{frame}{Further reading...}
+\footnotesize{
+\begin{itemize}
+\item \href{\webDOI/10.1007/978-1-4757-3124-8}{P.~Br\'emaud: \emph{Markov Chains: Gibbs Fields, Monte-Carlo Simulation, and Queues}, Springer (2008)};
+\item L. Devroye: \emph{Non Uniform Random Variate Generation}, Springer-Verlag (1986); Available at~\href{http://luc.devroye.org/rnbookindex.html}{\textcolor{red}{\texttt{http://luc.devroye.org/rnbookindex.html}}};%~\href{http://luc.devroye.org/rnbookindex.html}{\textcolor{red}{here}};
+\item O.~H\"{a}ggstr\"{o}m: \emph{Finite Markov Chains and Algorithmic Applications}, London Mathematical Society Student Texts (2002);
+\item P.K.~McKeown: \emph{Stochastic Simulation in Physics}, Springer (1997); 
+\item S.P.~Meyn \& R.L. Tweedie: \emph{Markov Chains and Stochastic Stability}, Springer-Verlag (1993); Re-compiled version as of 2005 available at ~\href{http://probability.ca/MT}{\textcolor{red}{\texttt{http://probability.ca/MT}}}.%~\href{http://probability.ca/MT}{\textcolor{red}{here}}.
+%\item P.E.~Kloeden, E. Platen: \emph{Numerical Solution of Stochastic Differential Equations}, 3rd ed., Springer (1999);
+%\item B.K.~{\O}ksendal: \emph{Stochastic Differential Equations: An Introduction with Applications}, 6th ed., Springer (2003);
+%\item C.~Soize: \emph{The Fokker-Planck Equation for Stochastic Dynamical Systems and its Explicit Steady State Solutions}, World Scientific (1994);
+%\item D.~Talay:  Simulation of stochastic differential systems. In \emph{Probabilistic Methods in Applied Physics} (P.~Kr\'ee \& W.~Wedig, eds.), pp.~54-96. Lecture Notes in Physics {\bf 451}, Springer (1995).
+\end{itemize}}
+
+\end{frame}
+
+\end{document}
+
+
