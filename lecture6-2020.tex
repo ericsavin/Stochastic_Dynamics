@@ -1,0 +1,994 @@
+% $Header: /cvsroot/latex-beamer/latex-beamer/solutions/generic-talks/generic-ornate-15min-45min.en.tex,v 1.5 2007/01/28 20:48:23 tantau Exp $
+\def\webDOI{http://dx.doi.org}
+\def\figs{/Users/ericsavin/Documents//Cours/DynSto/Figs}
+\def\figdynsto{/Users/ericsavin/Documents//Figures/DYNSTO}
+\def\Onera{ONERA}
+\def\ECP{CentraleSup\'elec}
+
+\documentclass{beamer}
+
+% This file is a solution template for:
+
+% - Giving a talk on some subject.
+% - The talk is between 15min and 45min long.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Berkeley}
+  % or ...
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+
+\usepackage[english]{babel}
+% or whatever
+
+\usepackage[latin1]{inputenc}
+% or whatever
+
+%\usepackage{mathtime}
+\usefonttheme{serif}
+%\usefonttheme{professionalfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multimedia}
+\usepackage{mathrsfs}
+\usepackage{mathabx}
+
+%\usepackage[pdftex, pdfborderstyle={/S/U/W 1}]{hyperref}
+\usepackage{hyperref}
+%\usepackage[svgnames]{xcolor}
+
+\newcommand{\ci}{\mathrm{i}}
+\newcommand{\trace}{\operatorname{Tr}}
+\newcommand{\Nset}{\mathbb{N}}
+\newcommand{\Zset}{\mathbb{Z}}
+\newcommand{\Rset}{\mathbb{R}}
+\newcommand{\Cset}{\mathbb{C}}
+\newcommand{\Sset}{\mathbb{S}}
+\newcommand{\Mset}{\mathbb{M}}
+\newcommand{\PhaseSpace}{\Omega}
+\newcommand{\id}{\mathrm{d}}
+\newcommand{\iexp}{\operatorname{e}}
+\newcommand{\iD}{\mathrm{D}}
+\newcommand{\iT}{\mathrm{T}}
+\newcommand{\iP}{\mathrm{P}}
+\newcommand{\iS}{\mathrm{S}}
+\newcommand{\itr}{{\sf T}}
+\newcommand{\iinj}{\mathrm{inj}}
+\newcommand{\idis}{\mathrm{dis}}
+\newcommand{\dis}{\id\mu}
+\newcommand{\dig}{\id\gamma}
+\newcommand{\did}{\id\Omega}
+\newcommand{\wg}{\omega}
+\newcommand{\xgj}{x}
+\newcommand{\ygj}{y}
+\newcommand{\zgj}{z}
+\newcommand{\ugj}{u}
+\newcommand{\vgj}{{\mathrm v}}
+\newcommand{\xg}{{\boldsymbol\xgj}}
+\newcommand{\yg}{{\boldsymbol\ygj}}
+\newcommand{\zg}{{\boldsymbol\zgj}}
+\newcommand{\Zg}{{\boldsymbol Z}}
+%\newcommand{\Zg}{{\bf\zgj}}
+\newcommand{\xigj}{\xi}
+\newcommand{\xig}{{\boldsymbol\xigj}}
+\newcommand{\kgj}{k}
+%\newcommand{\kgh}{\kgj_\ygj}
+\newcommand{\kg}{{\bf\kgj}}
+\newcommand{\Kg}{{\bf K}}
+\newcommand{\qg}{{\boldsymbol q}}
+\newcommand{\pg}{{\boldsymbol p}}
+\newcommand{\hkg}{{\hat \kg}}
+\newcommand{\hpg}{\hat{\pg}}
+\newcommand{\ug}{{\boldsymbol\ugj}}
+\newcommand{\vg}{{\boldsymbol v}}
+\newcommand{\sg}{{\boldsymbol s}}
+\newcommand{\strain}{\boldsymbol\epsilon}
+\newcommand{\stress}{\boldsymbol\sigma}
+\newcommand{\tenselas}{{\rm {\large C}}}
+\newcommand{\speci}{{\mathrm w}}
+\newcommand{\specij}{{\mathrm W}}
+\newcommand{\speciv}{{\bf \specij}}
+\newcommand{\cjg}[1]{\overline{#1}}
+\newcommand{\eigv}{{\bf b}}
+\newcommand{\eigw}{{\bf c}}
+\newcommand{\eigl}{\lambda}
+\newcommand{\jeig}{\alpha}
+\newcommand{\keig}{\beta}
+\newcommand{\cel}{c}
+\newcommand{\bcel}{{\bf\cel}}
+\newcommand{\deng}{{\mathcal E}}
+\newcommand{\flowj}{\pi}
+\newcommand{\flow}{\boldsymbol\flowj}
+\newcommand{\Flowj}{\Pi}
+\newcommand{\Flow}{\boldsymbol\Flowj}
+\newcommand{\fluxinj}{g}
+\newcommand{\fluxin}{{\bf\fluxinj}}
+\newcommand{\dscat}{\sigma}
+\newcommand{\tdscat}{\Sigma}
+\newcommand{\collop}{{\mathcal Q}}
+\newcommand{\epsd}{\delta}
+\newcommand{\rscat}{\rho}
+\newcommand{\tscat}{\tau}
+\newcommand{\Rscat}{\mathcal{R}}
+\newcommand{\Tscat}{\mathcal{T}}
+\newcommand{\lscat}{\ell}
+\newcommand{\floss}{\eta}
+\newcommand{\mdiff}{{\bf D}}
+\newcommand{\demi}{\frac{1}{2}}
+\newcommand{\domain}{{\mathcal O}}
+\newcommand{\bdomain}{{\mathcal D}}
+\newcommand{\interface}{\Gamma}
+\newcommand{\sinterface}{\gamma_D}
+\newcommand{\normal}{\hat{\bf n}}
+\newcommand{\bnabla}{\boldsymbol\nabla}
+\newcommand{\esp}[1]{\mathbb{E}\{\smash{#1}\}}
+\newcommand{\mean}[1]{\underline{#1}}
+\newcommand{\BB}{\mathbb{B}}
+\newcommand{\II}{{\boldsymbol I}}
+\newcommand{\TA}{\boldsymbol{\Gamma}}
+\newcommand{\Mdisp}{{\mathbf H}}
+\newcommand{\Hamil}{{\mathcal H}}
+\newcommand{\bzero}{{\bf 0}}
+
+\newcommand{\mass}{M}
+\newcommand{\damp}{D}
+\newcommand{\stif}{K}
+\newcommand{\dsp}{S}
+\newcommand{\dof}{q}
+\newcommand{\pof}{p}
+\newcommand{\MM}{{\boldsymbol\mass}}
+\newcommand{\MD}{{\boldsymbol\damp}}
+\newcommand{\MK}{{\boldsymbol\stif}}
+\newcommand{\MS}{{\boldsymbol\dsp}}
+\newcommand{\Cov}{{\boldsymbol C}}
+\newcommand{\dofg}{{\boldsymbol\dof}}
+\newcommand{\pofg}{{\boldsymbol\pof}}
+\newcommand{\driftj}{b}
+\newcommand{\drifts}{{\boldsymbol \driftj}}
+\newcommand{\drift}{{\underline\drifts}}
+\newcommand{\scatj}{a}
+\newcommand{\scat}{{\boldsymbol\scatj}}
+\newcommand{\diff}{{\boldsymbol\sigma}}
+\newcommand{\load}{F}
+\newcommand{\loadg}{{\boldsymbol\load}}
+\newcommand{\pdf}{\pi}
+\newcommand{\tpdf}{\pdf_t}
+\newcommand{\fg}{{\boldsymbol f}}
+\newcommand{\Ugj}{U}
+\newcommand{\Vgj}{V}
+\newcommand{\Xgj}{X}
+\newcommand{\Ygj}{Y}
+\newcommand{\Ug}{{\boldsymbol\Ugj}}
+\newcommand{\Vg}{{\boldsymbol\Vgj}}
+\newcommand{\Qg}{{\boldsymbol Q}}
+\newcommand{\Pg}{{\boldsymbol P}}
+\newcommand{\Xg}{{\boldsymbol\Xgj}}
+\newcommand{\Yg}{{\boldsymbol\Ygj}}
+\newcommand{\flux}{{\boldsymbol J}}
+\newcommand{\wiener}{W}
+\newcommand{\white}{B}
+\newcommand{\Wiener}{{\boldsymbol\wiener}}
+\newcommand{\White}{{\boldsymbol\white}}
+\newcommand{\paraj}{\nu}
+\newcommand{\parag}{{\boldsymbol\paraj}}
+\newcommand{\parae}{\hat{\parag}}
+\newcommand{\erroj}{\epsilon}
+\newcommand{\error}{{\boldsymbol\erroj}}
+\newcommand{\biaj}{b}
+\newcommand{\bias}{{\boldsymbol\biaj}}
+\newcommand{\disp}{{\boldsymbol V}}
+\newcommand{\Fisher}{{\mathcal I}}
+\newcommand{\likelihood}{{\mathcal L}}
+
+\newcommand{\heps}{\varepsilon}
+\newcommand{\roi}{\varrho}
+\newcommand{\jump}[1]{\llbracket{#1}\rrbracket}
+\newcommand{\po}{\operatorname{o}}
+\newcommand{\FFT}[1]{\widehat{#1}}
+\newcommand{\indic}[1]{{\mathbf 1}_{#1}}
+
+\newcommand{\mycite}[1]{\textcolor{red}{#1}}
+\newcommand{\mycitb}[1]{\textcolor{red}{[{\it #1}]}}
+
+\newcommand{\PDFU}{{\mathcal U}}
+\newcommand{\PDFN}{{\mathcal N}}
+\newcommand{\TK}{{\boldsymbol\Pi}}
+\newcommand{\TKij}{\pi}
+\newcommand{\TKi}{{\boldsymbol\pi}}
+\newcommand{\SMi}{\TKij^*}
+\newcommand{\SM}{\TKi^*}
+\newcommand{\lagmuli}{\lambda}
+\newcommand{\lagmul}{{\boldsymbol\lagmuli}}
+\newcommand{\constraint}{{\boldsymbol C}}
+\newcommand{\mconstraint}{\mean{\constraint}}
+
+\newcommand{\mybox}[1]{\fbox{\begin{minipage}{0.93\textwidth}{#1}\end{minipage}}}
+
+%\definecolor{rose}{LightPink}%{rgb}{251,204,231}
+
+\newtheorem{mydef}{Definition}
+\newtheorem{mythe}{Theorem}
+\newtheorem{myprop}{Proposition}
+
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\title[SDE and Fokker-Planck equation]
+{Diffusion processes}
+
+\subtitle
+{and the Fokker-Planck equation (some ideas...)} % (optional)
+
+\author[\'E. Savin] % (optional, use only with lots of authors)
+{\'E. Savin\inst{1,2}\\\scriptsize{\texttt{eric.savin@centralesupelec.fr}}}%\inst{1} }
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[\Onera] % (optional, but mostly needed)
+{\inst{1}{Information Processing and Systems Dept.\\\Onera, France}
+\and
+ \inst{2}{Mechanical and Environmental Engineering Dept.\\\ECP, France}}%
+%  Department of Theoretical Philosophy\\
+%  University of Elsewhere}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+%\date[Short Occasion] % (optional)
+\date{}
+
+\subject{Basics of SDE for Structural Dynamics}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSection[]
+%\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection]%,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Since this a solution template for a generic talk, very little can
+% be said about how it should be structured. However, the talk length
+% of between 15min and 45min and the theme suggest that you stick to
+% the following rules:  
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+\section{Introduction}
+
+\frame{\frametitle{Linear or non linear dynamical systems}
+
+\begin{itemize}
+
+\item Discrete linear dynamical system:
+\begin{displaymath}
+\MM\ddot{\dofg}+\MD\dot{\dofg}+\MK\dofg=\loadg(t)\,,
+\end{displaymath}
+or for $\ug=(\dofg,\pofg)$, $\pofg=\MM\dot{\dofg}$:%$\ug=\begin{pmatrix}\dofg \\ \MM\dot{\dofg} \end{pmatrix}$:
+\begin{displaymath}
+\dot{\ug}(t)=\begin{bmatrix} \bzero & \MM^{-1}
+\\ -\MK & -\MD\MM^{-1} \end{bmatrix}\ug(t)+\begin{bmatrix}\bzero\\\II\end{bmatrix}\loadg(t)\,,\quad\ug(0)=\ug_0\,.\end{displaymath}
+\item Non-linear~dynamical~system,~\emph{e.g.}~the~Duffing~oscillator:
+\begin{displaymath}
+\mass\ddot{\dof}+\damp\dot{\dof}+\stif\dof+\stif_0\dof^3=\load(t)\,,
+\end{displaymath}
+or:
+\begin{displaymath}
+\dot{\ug}(t)=\drifts(\ug,t)+\scat\load(t)\,,\quad\ug(0)=\ug_0\,,
+\end{displaymath}
+with $\drifts(\ug,t)=\begin{pmatrix}\mass^{-1}\pof \\ -\damp\mass^{-1}\pof-\stif\dof-\stif_0\dof^3\end{pmatrix}$, $\scat=\begin{pmatrix}0\\1\end{pmatrix}$.
+
+\end{itemize}
+
+}
+
+\frame{\frametitle{Example: free vibrations of a single oscillator}
+
+\begin{displaymath}
+\dot{\Ug}(t)=\frac{\id}{\id t}\begin{pmatrix}\dof\\\mass\dot{\dof}\end{pmatrix}=\underbrace{\begin{bmatrix} 0 & \mass^{-1}
+\\ -\stif & -\damp\mass^{-1} \end{bmatrix}}_{-\boldsymbol L}\Ug(t)\,,\quad\Ug(0)=\Ug_0\,,
+\end{displaymath}
+where $\Ug_0$ is a r.v. with \emph{marginal PDF} $\pdf_0(\ug_0)$.
+\begin{itemize}
+\item Formally $\Ug(t)=\fg(\Ug_0,t)=\iexp^{-{\boldsymbol L}t}\Ug_0$ and the \emph{marginal PDF} at time $t$, $\pdf(\ug;t)$, is given by the \emph{causality principle} (lecture~$\#1$):
+\begin{displaymath}
+\pdf_0(\ug_0)=\pdf(\fg(\ug_0,t))\det(\bnabla_\ug\fg)\,.
+\end{displaymath}
+\item It yields the conservation equation of the PDF:%\colorbox{yellow}{conservation equation} of the PDF:
+\begin{displaymath}
+0=\frac{\id\pdf_0}{\id t}=\partial_t\pdf+\bnabla_\ug\cdot(\pdf\dot{\ug})=\partial_t\pdf+\bnabla_\ug\cdot\flux(\pdf)
+\end{displaymath}
+with $\flux$ the probability flux and $\flux(\pdf)=-\pdf{\boldsymbol L}\ug$ the constitutive behavior.
+
+\end{itemize}
+}
+
+\section[SDE]{Stochastic differential equations (SDE)}
+
+\subsection[First-order systems]{First-order stochastic systems driven by noise}
+
+\frame{\frametitle{First-order stochastic differential equation}
+
+\vspace{0.3truecm}
+A general first-order stochastic differential equation for the process $\Ug$ indexed on $\Rset_+$ with values in $\Rset^q$:
+\begin{displaymath}
+\dot{\Ug}(t)=\drifts(\Ug,t)+\scat(\Ug,t)\loadg(t)\,,\quad\Ug(0)=\Ug_0\,,
+\end{displaymath}
+with the data:
+\begin{itemize}
+\item $\ug,t\mapsto\drifts(\ug,t):\Rset^q\times\Rset_+\rightarrow\Rset^q$ the \emph{drift} function;
+\item $\ug,t\mapsto\scat(\ug,t):\Rset^q\times\Rset_+\rightarrow{\mathbb M}_{q,p}(\Rset)$ the \emph{scattering} operator;
+\item $\Ug_0$ is an r.v. in $\Rset^q$  with known marginal PDF $\pdf_0(\ug_0)$;
+\item $\loadg(t)=(\load_1(t),\dots\load_p(t))$ is a second-order Gaussian random process indexed on $\Rset$ with values in $\Rset^p$, also centered, stationary, such that $\load_1(t),\dots\load_p(t)$ are mutually independent and mean-square continuous, with:
+\begin{displaymath}
+\MS_\loadg(\wg)=\dsp_0{\mathbf 1}_{[-B,B]}(\wg)[\II_p]\,,\quad\dsp_0>0\,,\quad B>0\,.
+\end{displaymath}
+
+\end{itemize}
+}
+
+\frame{\frametitle{First-order systems driven by noise}
+\begin{itemize}
+\item $B<+\infty$: colored noise, hot topic!
+\begin{displaymath}
+\Ug(t)=\Ug_0+\int_0^t\drifts(\Ug(s),s)\id s+\int_0^t\scat(\Ug(s),s)\loadg(s)\id s\,.
+\end{displaymath}
+\item $B\rightarrow+\infty$: $\loadg\rightarrow\dot{\Wiener}$ the \emph{normalized Gaussian white noise}, and the solution of the first-oder SDE holds as a ``stochastic integral'':
+\begin{displaymath}
+\Ug(t)=\Ug_0+\int_0^t\drifts(\Ug(s),s)\id s+\int_0^t\scat(\Ug(s),s)\circ\id\Wiener(s)\,.
+\end{displaymath}
+\item \emph{Causality}: the family of r.v. $\{\Ug(s),0\leq s\leq t\}$ is independent of the family of r.v. $\{\loadg(\tau),\tau>t\}$ or $\{\id\Wiener(\tau),\tau>t\}$.
+\end{itemize}
+}
+
+\frame{\frametitle{White noise}
+\framesubtitle{Definition}
+
+\begin{overprint}
+
+\onslide<1|handout:1>
+\begin{mydef}
+\begin{itemize}
+\item The normalized Gaussian white noise $\White(t)\equiv\dot{\Wiener}(t)$ with values in $\Rset^p$ is the Gaussian stochastic process indexed on $\Rset$, centered, stationary, with the spectral density matrix:
+\begin{displaymath}
+\MS_\White(\wg)=\frac{1}{2\pi}\II_p\,.
+\end{displaymath}
+\item Since $\white_1(t),\dots\white_p(t)$ are uncorrelated and jointly Gaussian, they are mutually independent.
+\item $\White$~is~not~second~order~${\vvvert\White(t)\vvvert^2}=\int\trace\MS_\White(\wg)\id\wg=+\infty$. 
+\end{itemize}
+\end{mydef}
+\footnotesize{This definition holds in the sense of generalized stochastic processes $\varphi\mapsto\White(\varphi):{\mathscr D}(T)\rightarrow L^2(\Omega,\Rset^p)$ where ${\mathscr D}(T)$ is the set of ${\mathscr C}^\infty$ functions having a compact support within $T\subseteq\Rset$.}
+
+\onslide<2|handout:2>
+%\vspace{0.1truecm}
+\centering{\includegraphics[scale=2.99]{\figdynsto/800px-White-noise}}
+
+White noise.
+
+\end{overprint}
+}
+
+\frame{\frametitle{Wiener process}
+\framesubtitle{Definition}
+The white noise is the (generalized) derivative of the Wiener process, or \emph{Brownian motion}.
+\begin{mydef}
+The (normalized) Wiener process $\Wiener(t)$ with values in $\Rset^p$ is the stochastic process indexed on $\Rset_+$, s.t.:
+\begin{itemize}
+\item $\wiener_1(t),\dots\wiener_p(t)$ are mutually independent;
+\item $\Wiener(0)=\bzero$ almost surely (a.s.);
+\item If $0\leq s<t<+\infty$ let $\Delta\Wiener(s,t)=\Wiener(t)-\Wiener(s)$, then:
+\begin{itemize}
+\item $\forall m$ and $0<t_1<t_2<\dots<t_m<+\infty$, $\Wiener(0)$, $\Delta\Wiener(0,t_1)$, $\Delta\Wiener(t_1,t_2)$, ... $\Delta\Wiener(t_{m-1},t_m)$ are mutually independent r.v. (independent increments);
+\item $\Delta\Wiener(s,t)$ is a Gaussian, centered, second-order r.v. with $\Cov_{\Delta\Wiener}(s,t)=(t-s)\II_p$.
+\end{itemize}
+\end{itemize}
+\end{mydef}
+}
+
+\frame{\frametitle{Wiener process}
+\framesubtitle{Characterization}
+
+\begin{overprint}
+
+\onslide<1|handout:1>
+\vspace{0.2truecm}
+Consequently it can be shown that:
+\begin{itemize}
+\item $\Wiener(t)$ is a second-order Gaussian, centered, mean-square continuous, non stationary stochastic process;
+\item the covariance and conditional PDF for $0\leq t,s<+\infty$:
+\begin{displaymath}
+\begin{split}
+\Cov_\Wiener(t,s) &=\operatorname{Min}(t,s)\II_p\,,\\
+\tpdf(\vg';t+s|\vg;t) &=(2\pi s)^{-\frac{p}{2}}\iexp^{-\frac{\|\vg'-\vg\|^2}{2s}}\,;
+\end{split}
+\end{displaymath}
+\item $\Wiener(t)$ has a.s. continuous sample paths;
+\item sample paths $t\mapsto\Wiener(t,\theta)$, $\theta\in\Omega_\theta$, are non differentiable a.s.
+\end{itemize}
+\vspace{0.5truecm}
+\footnotesize{As a generalized derivative with $\id\Wiener=(\id\wiener_1,\dots\id\wiener_p)$:
+\begin{displaymath}
+\id\Wiener(\varphi)=\White(-\dot{\varphi})\,,\quad\forall\varphi\in{\mathscr D}(\Rset)\,.
+\end{displaymath}}
+
+\onslide<2|handout:2>
+\centering{\includegraphics[scale=0.65]{\figdynsto/614px-Wiener_process_3d}}
+
+Wiener process in $\Rset^3$.
+
+\end{overprint}
+}
+
+\subsection{Stochastic integrals}
+
+\frame{\frametitle{Stochastic integrals}
+\framesubtitle{Definition}
+
+%\begin{overprint}
+
+%\onslide<1|handout:1>
+\begin{itemize}
+\item Let $\Xg(t)$ be a stochastic process indexed by $\Rset_+$ with a.s. continuous sample paths.
+\item Assume the r.v. $\{\Xg(s),0\leq s\leq t\}$ are independent of the r.v. $\{\Delta\Wiener(t,\tau),\tau>t\}$: a \emph{non anticipative} process, then
+%\begin{displaymath}
+%\!\!\!\!\!\!\!\!P\left(\left\|\int_0^t\Xg(s)\id_\lambda\Wiener(s)-\sum_{k=1}^K\left[(1-\lambda)\Xg(t_k)+\lambda\Xg(t_{k+1})\right]\Delta\Wiener(t_k,t_{k+1})\right\|\geq\epsilon\right)\underset{K\rightarrow+\infty}{\rightarrow}0\,,
+%\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\int_0^t\Xg(s)\id_\lambda\Wiener(s)=\underset{K\rightarrow+\infty}{\operatorname{l.i.p.}}\sum_{k=1}^K\left[(1-\lambda)\Xg(t_k)+\lambda\Xg(t_{k+1})\right]\Delta\Wiener(t_k,t_{k+1})\,,
+%\end{displaymath}
+\begin{multline*}
+\int_0^t\Xg(s)\id_\lambda\Wiener(s) \\
+=\underset{K\rightarrow+\infty}{\operatorname{l.i.p.}}\sum_{k=1}^K\left[(1-\lambda)\Xg(t_k)+\lambda\Xg(t_{k+1})\right]\Delta\Wiener(t_k,t_{k+1})\,,
+\end{multline*}
+for any partition $0=\smash{t_1<t_2<\cdots<t_{K+1}=t}$ of $[0,t]$ with $\smash{\underset{1\leq k\leq K}{\max}(t_{k+1}-t_k)\underset{K\rightarrow+\infty}\rightarrow 0}$.
+\end{itemize}
+}
+
+\frame{\frametitle{Stochastic integrals}
+\framesubtitle{Application to stochastic differential calculus}
+
+%\onslide<2|handout:2>
+\begin{itemize}
+\item A simple example--remind $\Delta\wiener\propto\Delta t^\demi$ for the real-valued Wiener process $\wiener$:
+\begin{displaymath}
+\int_0^t\wiener(s)\id_\lambda\wiener(s)=\demi\wiener(t)^2+\left(\lambda-\demi\right)t\,,
+\end{displaymath}
+from which one deduces the stochastic differential:
+\begin{displaymath}
+\id_\lambda(\wiener(t)^2)=2\wiener(t)\id\wiener(t)+(1-2\lambda)\id t\,.
+\end{displaymath}
+\item More generally ($\lambda=0$ is called the \emph{It\=o formula}):
+\begin{displaymath}
+\id_\lambda(f(\wiener(t))=f'(\wiener(t))\id\wiener(t)+\left(\demi-\lambda\right)f''(\wiener(t))\id t\,.
+\end{displaymath}
+\end{itemize}
+
+%\end{overprint}
+}
+
+\frame{\frametitle{Stochastic integrals}
+\framesubtitle{Stratonovich-It\=o}
+\begin{itemize}
+\item If $\lambda=\demi$ the usual differential calculus applies, and the solution of SDE holds as a \emph{Stratonovich integral} (1966):
+\begin{displaymath}
+\Ug(t)=\Ug_0+\int_0^t\drifts(\Ug(s),s)\id s+\int_0^t\scat(\Ug(s),s)\circ\id\Wiener(s)\,.
+\end{displaymath}
+\item If $\lambda=0$, its solution holds as an \emph{It\=o integral} (1944):
+\begin{displaymath}
+\Ug(t)=\Ug_0+\int_0^t\drift(\Ug(s),s)\id s+\int_0^t\scat(\Ug(s),s)\id\Wiener(s)\,,
+\end{displaymath}
+where:
+\begin{displaymath}
+\drift(\ug,t)=\drifts(\ug,t)+\demi\scat^\itr\bnabla_\ug\scat\,.
+\end{displaymath}
+\item $\Ug(t)$ is a \emph{Markov process}.
+\end{itemize}
+}
+
+\frame{\frametitle{Stochastic integrals}
+\framesubtitle{It\=o's formula}
+\begin{itemize}
+\item Let $\Ug(t)\in\Rset^q$ be the solution of the ISDE:
+\begin{displaymath}
+\Ug(t)=\Ug_0+\int_0^t\drift(\Ug(s),s)\id s+\int_0^t\scat(\Ug(s),s)\id\Wiener(s)\,.
+\end{displaymath}
+\item Let $\phi:\Rset^q\times\Rset\to\Rset$ be a smooth function. Then \emph{It\=o's formula} states that:
+\begin{multline*}
+\phi(\Ug(t),t)=\phi(\Ug_0,0)+\int_0^t\frac{\partial\phi}{\partial t}(\Ug(s),s)\id s \\
++ \int_0^t\bnabla_\ug\phi(\Ug(s),s)\cdot\id\Ug(s) \\
++\demi\int_0^t\bnabla_\ug\otimes\bnabla_\ug\phi(\Ug(s),s):\scat(\Ug(s),s)\scat(\Ug(s),s)^\itr\id s\,,
+\end{multline*}
+where $\id\Ug(t)=\drift(\Ug(s),s)\id s+\scat(\Ug(s),s)\id\Wiener(s)$.
+\end{itemize}
+}
+
+\subsection{Diffusion processes}
+
+\frame{\frametitle{Markov processes}
+\framesubtitle{Definition}
+\begin{mydef}
+The conditional probability given $t_0<\dots<t_m<t$:
+\begin{displaymath}
+\tpdf(\ug;t|\ug_0,\dots\ug_m;t_0,\dots t_m)=\frac{\pdf(\ug_0,\dots\ug_m,\ug;t_0,\dots t_m,t)}{\pdf(\ug_0,\dots\ug_m;t_0,\dots t_m)}\,.
+\end{displaymath}
+\end{mydef}
+
+\begin{mydef}
+Let $\Ug(t)$ be a stochastic process defined on $(\Omega,{\mathcal E},P)$ and indexed on $\Rset_+$ with values in $\Rset^q$. It is a Markov process if:
+\begin{itemize}
+\item for all $0\leq t_1<\dots<t_m<t$ and $\ug_1,\dots\ug_m,\ug$ in $\Rset^q$
+\begin{displaymath}
+\tpdf(\ug;t|\ug_0,\dots\ug_m;t_0,\dots t_m)=\tpdf(\ug;t|\ug_m;t_m)\,;
+\end{displaymath}
+\item the marginal PDF $\pdf_0(\ug_0)$ of $\Ug(0)$ can be any PDF.
+\end{itemize}
+\end{mydef}
+}
+
+\frame{\frametitle{Markov processes}
+\framesubtitle{Chapman-Kolmogorov equation}
+\begin{itemize}
+\item A Markov process is fully characterized by:
+\begin{itemize}
+\item its marginal PDF $\pdf(\ug;t)$,
+\item and its \emph{transition PDF} $\tpdf(\ug;t|\vg;s)$, $0\leq s<t<+\infty$, with
+\begin{displaymath}
+\pdf(\ug;t)=\int_{\Rset^q}\tpdf(\ug;t|\vg;s)\pdf(\vg;s)\id\vg\,.
+\end{displaymath}
+\end{itemize}
+\item $\tpdf$ satisfies the \emph{Chapman-Kolmogorov equation}:
+\begin{displaymath}
+\!\!\!\!\tpdf(\ug;t|\ug';t')=\int_{\Rset^q}\tpdf(\ug;t|\vg;s)\tpdf(\vg;s|\ug';t')\id\vg\,,\quad t'<s<t\,.
+\end{displaymath}
+\item Homogeneous Markov process:
+\begin{displaymath}
+\tpdf(\ug;t|\vg;s)=\tpdf(\ug;t-s|\vg;0)\,,\quad 0\leq s<t<+\infty\,.
+\end{displaymath}
+\item The Brownian motion is a Markov process.
+\end{itemize}
+}
+
+\frame{\frametitle{Diffusion processes}
+\framesubtitle{Definition}
+
+\begin{mydef}
+The $\Rset^q$--valued Markov process $\Ug(t)$ with a.s. continuous sample paths and transition PDF $\tpdf(\vg;s|\ug;t)$ is a diffusion process if $\forall\epsilon>0$ (but \underline{not necessarily small}), $\forall\ug\in\Rset^q$ the first moments of its increments are such that for $h>0$:
+\begin{displaymath}
+\begin{split}
+\int_{\|\vg-\ug\|\geq\epsilon}\tpdf(\id\vg;t+h|\ug;t)       &=\po(h)\,,\\
+\int_{\|\vg-\ug\|<\epsilon}(\vg-\ug)\tpdf(\id\vg;t+h|\ug;t) &=h\drift(\ug,t)+\po(h)\,, \\
+\int_{\|\vg-\ug\|<\epsilon}(\vg-\ug)\otimes(\vg-\ug)\tpdf(\id\vg;t+h|\ug;t) &=h\diff(\ug,t)+\po(h)\,,
+\end{split}
+\end{displaymath}
+where $\drift\in\Rset^q$ and $\diff\in{\mathbb M}_{q,q}(\Rset)$ symmetric, positive.
+\end{mydef}
+}
+
+\frame{\frametitle{Diffusion processes}
+\framesubtitle{Interpretation}
+
+\begin{itemize}
+\item \emph{Continuity}: particles moving on sample paths of a diffusion process only make small jumps, or the probability of moving a distance $\epsilon$ goes to zero as $h$ goes to zero no matter how small $\epsilon$ is.
+\item \emph{Drift}: those particles can have a net mean velocity $\drift$.
+\item \emph{Diffusion}: particles spread as time increases with the rate $\trace\diff$. Entropy increases while the phase space contracts, thus some information (energy) gets lost.
+\end{itemize}
+\begin{displaymath}
+\Ug(t+h)-\Ug(t)\approx h\drift(\Ug(t),t)+\diff^\demi(\Ug(t),t)\Delta\Wiener(t,t+h)\,.
+\end{displaymath}
+
+}
+
+\frame{\frametitle{Fokker-Planck equation}
+
+The marginal PDF $\pdf$ and transition PDF $\tpdf$ of a diffusion process satisfy the \emph{Fokker-Planck equation}:
+\begin{displaymath}
+\partial_t\pdf+\bnabla_\ug\cdot\left(\pdf\drift-\demi\bnabla_\ug\cdot(\pdf\diff)\right)=0\,,
+\end{displaymath}
+with~$\pdf(\ug_0;0)=\pdf_0(\ug_0)$~and~$\lim_{h\downarrow 0}\tpdf(\ug;t+h|\vg;t)=\delta(\ug-\vg)$.\\
+\vspace{-0.3truecm}
+\scriptsize{
+\begin{displaymath}
+\begin{split}
+\!\!\!\!&\int_{\Rset^q}f(\ug)\partial_t\tpdf(\ug;t|\vg;s)\id\ug=\lim_{h\downarrow 0}\frac{1}{h}\int_{\Rset^q}f(\ug)\left(\tpdf(\ug;t+h|\vg;s)-\tpdf(\ug;t|\vg;s)\right)\id\ug \\
+\!\!\!\!&=\lim_{h\downarrow 0}\frac{1}{h}\int_{\Rset^q}\tpdf(\ug;t|\vg;s)\left[\int_{\Rset^q}f(\ug')\tpdf(\ug';t+h|\ug;t)\id\ug'-f(\ug)\right]\id\ug\,\quad\text{(C-K)} \\
+\!\!\!\!&=\lim_{h\downarrow 0}\frac{1}{h}\int_{\Rset^q}\tpdf(\ug;t|\vg;s)\int_{\Rset^q}\left(f(\ug')-f(\ug)\right)\tpdf(\ug';t+h|\ug;t)\id\ug'\id\ug\,\quad\text{(norm.)} \\
+\!\!\!\!&=\lim_{h\downarrow 0}\frac{1}{h}\int_{\Rset^q}\tpdf(\ug;t|\vg;s)\int_{\|\ug'-\ug\|<\epsilon}\!\!\!\!\!\!\!\!\!\!\!\!\left(f(\ug')-f(\ug)\right)\tpdf(\ug';t+h|\ug;t)\id\ug'\id\ug\,,\quad\forall f\in{\mathscr C}^2_0\,.\\
+\end{split}
+\end{displaymath}
+Then use a Taylor expansion for $f$, definitions of drift and diffusion, and\\
+\vspace{-0.05truecm}integrate by parts.
+}
+}
+
+\frame{\frametitle{It\=o's stochastic differential equations (ISDE)}
+\framesubtitle{Solutions}
+
+\begin{displaymath}
+\id\Ug=\drift(\Ug,t)\id t+\scat(\Ug,t)\id\Wiener\,,\quad\Ug(0)=\Ug_0\,,
+\end{displaymath}
+with the regularity assumptions:
+\begin{displaymath}
+\begin{split}
+\|\drift(\ug,t)\|+\|\scat(\ug,t)\| &\leq K(1+\|\ug\|)\,, \\
+\|\drift(\ug',t)-\drift(\ug,t)\|+\|\scat(\ug',t)-\scat(\ug,t)\| &\leq K\|\ug'-\ug\|\,.
+\end{split}
+\end{displaymath}
+\begin{enumerate}
+\item Then the SDE has a unique solution, with a.s. continuous sample paths. If in addition $\drift$ and $\scat$ are independent of $t$, $\Ug(t)$ is homogeneous.
+\item If $t\mapsto\drift(\ug,t)$ and $t\mapsto\scat(\ug,t)$ are continuous, $\Ug(t)$ is also a diffusion process with $\diff=\scat\scat^\itr$.
+\end{enumerate}
+
+}
+
+\frame{\frametitle{It\=o's stochastic differential equations (ISDE)}
+\framesubtitle{Example: Black-Scholes\footnote{\noindent\tiny{Fischer Black (1938--1995), Myron Scholes (1941--): American financial economists. M. Scholes received the Sveriges Riksbank Prize in Economic Sciences in Memory of A. Nobel in 1997 for this model for valuing options, together with Robert Merton (1944--).}} model}
+
+\begin{itemize}
+\item The relative variation of a stock $U(t)$ with constant (annualized) drift rate $\mu$ and volatility $\sigma$:
+\begin{displaymath}
+\frac{\id U}{U}= \mu\id t+\sigma\id W\,,\quad U(0)=U_0\,.
+\end{displaymath}
+\item Transformation to a Stratonovich SDE:
+\begin{displaymath}
+\frac{\id U}{U}=\left(\mu-\frac{\sigma^2}{2}\right)\id t+\sigma\circ\id W\,,\quad U(0)=U_0\,,
+\end{displaymath}
+for which ``normal rules of integration'' apply:
+\begin{displaymath}
+%\!\!\!\!\int_0^t\frac{1}{U}\frac{\id U}{\id t}=\int_0^t\left((\mu-\frac{\sigma^2}{2})\id t+\sigma\circ\id W\right)\,,\;\;
+U(t)=U_0\iexp^{\sigma W(t)+(\mu-\frac{\sigma^2}{2})t}\,.
+\end{displaymath}
+\item The Fokker-Planck equation:
+\begin{displaymath}
+\partial_t\pdf+\mu\partial_u(\pdf u)-\frac{\sigma^2}{2}\partial_u^2(\pdf u^2)=0\,,\quad\pdf(u;0)=\pdf_0(u)\,.
+\end{displaymath}
+
+\end{itemize}
+
+}
+
+\section[Numerical solutions]{Numerical simulations of SDE}
+
+\subsection[Stochastic modeling]{Stochastic modeling with SDE}
+
+\frame{\frametitle{First-order stochastic differential equation}
+
+\vspace{0.3truecm}
+A general first-order stochastic differential equation for the process $\Ug$ indexed on $\Rset_+$ with values in $\Rset^q$:
+\begin{displaymath}
+\left\{\begin{split}
+\dot{\Ug}(t) &=\drifts(\Ug,t)+\scat(\Ug,t)\loadg(t)\,,\quad t>0\,,\\
+\Ug(0)       &=\Ug_0\,,
+\end{split}\right.
+\end{displaymath}
+with the data:
+\begin{itemize}
+\item $\ug,t\mapsto\drifts(\ug,t):\Rset^q\times\Rset_+\rightarrow\Rset^q$ the \emph{drift} function;
+\item $\ug,t\mapsto\scat(\ug,t):\Rset^q\times\Rset_+\rightarrow\Mset_{q,p}(\Rset)$ the \emph{scattering} operator;
+\item $\Ug_0$ is an r.v. in $\Rset^q$  with known marginal PDF $\pdf_0(\ug_0)$;
+\item $\loadg(t)=(\load_1(t),\dots\load_p(t))$ is a second-order Gaussian random process indexed on $\Rset^+$ with values in $\Rset^p$, centered, mean-square continuous. %, and \emph{physically realizable}.
+
+\end{itemize}
+}
+
+\frame{\frametitle{Markovian realization}
+\framesubtitle{Definition}
+
+\begin{mydef}
+$\loadg(t)$ indexed on $\Rset^+$ with values in $\Rset^p$, second-order, Gaussian, centered and mean-square continuous admits a Markovian realization if:
+\begin{displaymath}
+\left\{\begin{array}{rll}
+\loadg(t)\!\!\!\!    &={\boldsymbol H}\Vg(t)\,, & t\geq 0\,, \\
+\dot{\Vg}(t)\!\!\!\! &=\Pg\Vg(t)+\Qg\White(t)\,, & t>0\,,\\
+\quad\Vg(0)\!\!\!\!  &=\Vg_0 & \text{a.s.}
+\end{array}\right.
+\end{displaymath}
+where $\Vg_0$ is a Gaussian r.v. in $\Rset^n$, $\Vg(t)$ is a diffusion process indexed on $\Rset_+$ with values in $\Rset^n$, $\Pg,\Qg\in\Mset_n(\Rset)$, ${\boldsymbol H}\in\Mset_{p,n}(\Rset)$, $\Re\mathrm{e}\{\lambda_j(\Pg)\}<0$.
+\end{mydef}
+{\footnotesize
+\begin{itemize}
+\item This is equivalent to a linear It\=o stochastic differential equation.
+\item $\Vg_0\sim\PDFN(\bzero,{\boldsymbol\Sigma}_0)$ where ${\boldsymbol\Sigma}_0=\int_0^{+\infty}\iexp^{\tau\Pg}\Qg\Qg^\itr\iexp^{\tau\Pg^\itr}\id\tau$.
+\end{itemize}}
+}
+
+\frame{\frametitle{Physically realizable process}
+\framesubtitle{Definition}
+\begin{mydef}
+$\loadg(t)$ indexed on $\Rset$ with values in $\Rset^p$, second-order, mean-square stationary and continuous, centered, is physically realizable if $\exists{\mathbb H}\in L^2(\Rset)$, $\operatorname{supp}{\mathbb H}\subseteq\Rset_+$, s.t.:
+\begin{displaymath}
+\loadg(t)=\int_{-\infty}^t{\mathbb H}(t-\tau)\White(\tau)\id\tau\,,
+\end{displaymath}
+or equivalently $\MS_\loadg(\wg)=\frac{1}{2\pi}\FFT{\mathbb H}(\wg)\FFT{\mathbb H}(\wg)^*$, $\forall\wg\in\Rset$.
+\end{mydef}
+%\begin{mythe}
+A necessary and sufficient condition (Rozanov 1967): %(provided that $\MS_\loadg$ has maximum rank):
+\begin{displaymath}
+\int_\Rset\frac{\ln(\det\MS_\loadg(\wg))}{1+\wg^2}\id\wg>-\infty\,.
+\end{displaymath}
+%\end{mythe}
+}
+
+\frame{\frametitle{Markovian realization}
+\framesubtitle{Existence for a physically realizable process}
+\begin{mythe}
+A necessary and sufficient condition:
+\begin{displaymath}
+\MS_\loadg(\wg)=\frac{{\boldsymbol R}(\ci\wg){\boldsymbol R}(\ci\wg)^*}{2\pi|P(\ci\wg)|^2}\,,\;\;\text{or}\;\;{\mathbb H}(\wg)=\frac{{\boldsymbol R}(\ci\wg)}{P(\ci\wg)}\,,
+\end{displaymath}
+where:
+\begin{itemize}
+\item $P(z)$ is a polynomial of degree $d$ on $\Cset$ with real coefficients and roots in the half-plane $\Re\mathrm{e}(z)<0$,
+\item ${\boldsymbol R}(z)$ is a polynomial on $\Cset$ with coefficients in $\Mset_{p,n}(\Rset)$ and degree $r<n$.
+\end{itemize}
+\end{mythe}
+The Markovian realization always exists in infinite dimension $n=+\infty$.
+}
+
+\subsection{Numerical schemes}
+
+\frame{\frametitle{First-order SDE (cont'd)}
+
+\vspace{0.3truecm}
+A non linear first-order stochastic differential equation for the process $\Zg(t)=(\Ug(t),\Vg(t))$ indexed on $\Rset_+$ with values in $\Rset^\nu$, $\nu=q+n$:
+\begin{displaymath}
+\left\{\begin{split}
+\id\Zg(t) &=\drifts_\zgj(\Zg,t)\id t+\scat_\zgj\id\Wiener\,,\quad t>0\,,\\
+\Zg(0) &=\Zg_0\,,
+\end{split}\right.
+\end{displaymath}
+where $\Zg_0=(\Ug_0,\Vg_0)$,
+\begin{displaymath}
+\drifts_\zgj(\ug,\vg,t)=\begin{bmatrix}\drifts(\ug,t)+\scat(\ug,t){\boldsymbol H}\vg \\ \Pg\vg \end{bmatrix}\,,\quad\scat_\zgj=\begin{bmatrix}\bzero & \bzero \\ \bzero & \Qg \end{bmatrix}\,,
+\end{displaymath}
+and $\Wiener(t)$ is the Wiener process in $\Rset^\nu$.
+}
+
+\frame{\frametitle{Numerical integration of SDE}
+\framesubtitle{Strong convergence}
+
+\begin{displaymath}
+\left\{\begin{array}{rll}
+\id\Ugj(t)\!\!\!\! &=\driftj(\Ugj,t)\id t+\scatj(\Ugj,t)\id\wiener(t)\,, & t>0\,,\\
+\Ugj(0)\!\!\!\!    &=\Ugj_0 & \text{a.s.}
+\end{array}\right.
+\end{displaymath}
+
+\begin{mydef}
+An approximation $(\tilde{\Ugj}_j)_j$ converges with strong order $k>0$ if $\exists K_j>0$:
+\begin{displaymath}
+E\left\{\left|\Ugj(j\Delta t)-\tilde{\Ugj}_j\right|\right\}\leq K_j(\Delta t)^k\,.
+\end{displaymath}
+\end{mydef}
+The sample paths of the approximation $\smash{\tilde{\Ugj}}$ should be close to those of the It\=o process.
+
+}
+
+\frame{\frametitle{Numerical integration of SDE}
+\framesubtitle{Weak convergence}
+
+\begin{displaymath}
+\left\{\begin{array}{rll}
+\id\Ugj(t)\!\!\!\! &=\driftj(\Ugj,t)\id t+\scatj(\Ugj,t)\id\wiener(t)\,, & t>0\,,\\
+\Ugj(0)\!\!\!\!    &=\Ugj_0 & \text{a.s.}
+\end{array}\right.
+\end{displaymath}
+
+\begin{mydef}
+An approximation $(\tilde{\Ugj}_j)_j$ converges with weak order $k>0$ if for any polynomial $g$ $\exists K_{g,j}>0$:
+\begin{displaymath}
+\left|E\left\{g(\Ugj(j\Delta t))\right\}-E\{g(\tilde{\Ugj}_j)\}\right|\leq K_{g,j}(\Delta t)^k\,.
+\end{displaymath}
+\end{mydef}
+The probability distribution of the approximation should be close to that of the It\=o process in order to get a good estimate of the expectation ($g(\ugj)=\ugj$) or the variance ($g(\ugj)=\ugj^2$), for example.
+}
+
+\frame{\frametitle{Time discrete approximations}
+\framesubtitle{Explicit $0.5$--order methods}
+\begin{itemize}
+\item Assume that $v$ and $a$ are independent of time $t$ (thus $\Ugj(t)$ is a diffusion process), and let $t_j=j\Delta t$, $\driftj_j=\driftj(\tilde{\Ugj}_j)$, $\scatj_j=\scatj(\tilde{\Ugj}_j)$, $\Ugj_0\sim\pdf_0(\id\ugj_0)$, $G\sim\PDFN(0,1)$.
+\item It\=o SDE: the \emph{Euler-Maruyama scheme} (1955),
+\begin{displaymath}
+\begin{split}
+\tilde{\Ugj}_{j+1} &=\tilde{\Ugj}_j+\driftj_j\Delta t+\scatj_j\sqrt{\Delta t}\,G\,,\\
+\tilde{\Ugj}_0       &=\Ugj_0\,.
+\end{split}
+\end{displaymath}
+\item Stratonovich SDE: the \emph{Euler-Heun scheme} (1982),
+\begin{displaymath}
+\begin{split}
+\tilde{\Ugj}_{j+1} &=\tilde{\Ugj}_j+\driftj_j\Delta t+\tilde{\scatj}_j\sqrt{\Delta t}\,G\,,\\
+\tilde{\scatj}_j &=\demi\left[\scatj_j+\scatj\left(\tilde{\Ugj}_j+\scatj_j\sqrt{\Delta t}\,G\right)\right]\,, \\
+\tilde{\Ugj}_0   &=\Ugj_0\,.
+\end{split}
+\end{displaymath}
+\item Both have a strong order $k=\demi$ (vs. $k=1$ for ordinary differential equations) and a weak order $k=1$.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Time discrete approximations}
+\framesubtitle{Explicit $1$--order methods}
+\begin{itemize}
+%\item Higher-order schemes may be derived using stochastic Taylor expansions.
+\item The \emph{Milstein scheme} (1974):
+\begin{displaymath}
+\hspace*{-0.5truecm}\begin{split}
+\tilde{\Ugj}_{j+1} &=\tilde{\Ugj}_j+\driftj_{\lambda,j}\Delta t+\scatj_j\sqrt{\Delta t}\,G+\demi\scatj_j\scatj'_j\Delta t(G^2+2\lambda-1)\,,\\
+\tilde{\Ugj}_0       &=\Ugj_0\,,
+\end{split}
+\end{displaymath}
+where $\lambda=0$ (It\=o SDE) or $\lambda=\demi$ (Stratonovich SDE). %Both are equivalent for additive noise $a'=0$.
+\item The \emph{Runge-Kutta Milstein scheme} (1984):
+\begin{displaymath}
+\hspace*{-0.5truecm}\begin{split}
+\tilde{\Ugj}_{j+1} &=\tilde{\Ugj}_j+\driftj_{\lambda,j}\Delta t+\scatj_j\sqrt{\Delta t}\,G+\demi\scatj_j\tilde{\scatj}_j'\Delta t(G^2+2\lambda-1)\,,\\
+\scatj_j\tilde{\scatj}'_j &=(\Delta t)^{-\demi}\left[\scatj\left(\tilde{\Ugj}_j+\scatj_j\sqrt{\Delta t}\right)-\scatj_j\right]\,,\\
+\tilde{\Ugj}_0    &=\Ugj_0\,.
+\end{split}
+\end{displaymath}
+\item Both have strong and weak orders $k=1$ (under mild conditions on $\driftj$ and $\scatj$).
+\end{itemize}
+}
+
+\frame{\frametitle{Time discrete approximations}
+\framesubtitle{Stochastic Taylor approximations}
+
+\begin{itemize}
+\item Higher-order schemes may be derived using stochastic Taylor expansions:
+{\footnotesize
+\begin{multline*}
+%\begin{split}
+\Ugj_{j+1}-\Ugj_j=\int_{t_j}^{t_{j+1}}\!\!\!\!\driftj(\Ugj)\id t+\int_{t_j}^{t_{j+1}}\!\!\!\!\scatj(\Ugj)\id\wiener \\
+\simeq\int_{t_j}^{t_{j+1}}\!\!\!\!\left(\driftj(\Ugj_j)+\driftj'(\Ugj_j)\Delta\Ugj_j\right)\id t+\int_{t_j}^{t_{j+1}}\!\!\!\!\left(\scatj(\Ugj_j)+\scatj'(\Ugj_j)\Delta\Ugj_j\right)\id\wiener\,,
+%\end{split}
+\end{multline*}
+where $\smash{\Delta\Ugj_j}=\smash{\int_{t_j}^t\!\!\driftj(\Ugj)\id\tau+\int_{t_j}^t \!\!\scatj(\Ugj)\id\wiener}$.}
+%\begin{displaymath}
+%\begin{split}
+%\Delta\Ugj_j &=\int_{t_j}^t\!\!\driftj(\Ugj)\id\tau+\int_{t_j}^t \!\!\scatj(\Ugj)\id\wiener\,. \\
+%%\int_{t_j}^{t_{j+1}}\int_{t_j}^t\id\wiener\id\wiener &=\demi(\Delta\wiener)^2+(\lambda-\demi)\Delta t\,.
+%\end{split}
+%\end{displaymath}}
+\item Then $\smash{\int_{t_j}^{t_{j+1}}\int_{t_j}^t\id_\lambda\wiener(s)\id_\lambda\wiener(t)}=\smash{\demi(\Delta\wiener)^2+(\lambda-\demi)\Delta t}$.
+\item Higher-order expansions involve additional r.v. $\Delta Z_j=\int_{t_j}^{t_{j+1}}\int_{t_j}^t\id\wiener\id t$ with $E\{(\Delta Z_j)^2\}\propto \Delta t^3$ etc.
+\item Weak Taylor approximations $\smash{\Ugj_0}\sim\smash{\hat{\Ugj}_0}$, $\Delta\wiener\sim\smash{\Delta\hat{\wiener}}$, $\smash{\Delta Z_j}\sim\smash{\Delta\hat{Z}_j}$ with approximately the same moment properties.
+\end{itemize}
+}
+
+\section[Stochastic Hamiltonians]{Stochastic Hamiltonian dynamical systems}
+
+\frame{\frametitle{Canonical equations}
+
+\begin{itemize}
+\item $\Qg\in\Rset^q$ the position, $\Pg\in\Rset^q$ the momentum, $\Hamil$ the Hamiltonian (independent of time), $\loadg$ the non conservative forces,
+\begin{displaymath}
+\begin{split}
+\dot{\Qg} &=\bnabla_\pg\Hamil(\Qg,\Pg)\,,\\
+\dot{\Pg} &=-\bnabla_\qg\Hamil(\Qg,\Pg)+\loadg(\Qg,\Pg,\dot{\Wiener})\,,
+\end{split}
+\end{displaymath}
+where $\loadg(\qg,\pg,\fg)=-f(\Hamil){\mathbf G}\bnabla_\pg\Hamil+g(\Hamil){\mathbf S}\fg$ and $\dot{\Wiener}$ a white noise.
+\item Example: Duffing oscillator driven by white noise,
+\begin{displaymath}
+\mass\ddot{Q}+\damp\dot{Q}+\stif Q+\stif_0 Q^3=g_0S_0\dot{W}
+\end{displaymath}
+then $\deng_c=\demi\mass\dot{Q}^2$, $\deng_p=\demi\stif Q^2+\frac{1}{4}\stif_0Q^4$ and $P=\partial_{\dot{q}}\deng_c$, thus:
+\begin{displaymath}
+\Hamil(Q,P)=\demi\mass^{-1}P^2+\demi\stif Q^2+\frac{1}{4}\stif_0 Q^4\,.
+\end{displaymath}
+\end{itemize}
+
+}
+
+\frame{\frametitle{Fokker-Planck equation}
+
+\begin{itemize}
+\item The associated \emph{Fokker-Planck equation} for the transition PDF $\tpdf(\qg',\pg';t'|\qg,\pg;t)$ reads:
+\begin{displaymath}
+\partial_t\pdf+\{\pdf,\Hamil\}-\bnabla_\pg\cdot\flux(\pdf)=0\,,
+\end{displaymath}
+with the Poisson bracket and probability flux being defined as:
+\begin{displaymath}
+\!\!\!\!\!\!\!\begin{split}
+\{\pdf,\Hamil\} &=\bnabla_\qg\pdf\cdot\bnabla_\pg\Hamil-\bnabla_\pg\pdf\cdot\bnabla_\qg\Hamil\,,\\
+\flux(\pdf) &=\pdf\left[f(\Hamil){\bf G}+\demi g(\Hamil)g'(\Hamil){\mathbf S}{\mathbf S}^\itr\right]\bnabla_\pg\Hamil \\
+&\;\;\;\;\;+\demi g(\Hamil)^2{\mathbf S}{\mathbf S}^\itr\bnabla_\pg\pdf\,.
+\end{split}
+\end{displaymath}
+
+\end{itemize}
+
+}
+
+\frame{\frametitle{Summary}
+
+\begin{itemize}
+\item What's new?
+\begin{itemize}
+\item Non linear filtering of white noise,
+\item A (high-dimensional) PDE for the marginal and transition PDF of diffusion processes,
+\item Stochastic integrals,
+\item Numerical simulations of SDE,
+\item Application to non linear dynamical systems.
+\end{itemize}
+\item What's left?
+\begin{itemize}
+%\item Transformation of physical SDE to ISDE,
+\item Numerical solutions of the FKE,
+\item Computation of second-order quantities of diffusion processes.
+%\item Numerical simulations of SDE.
+\end{itemize}
+\end{itemize}
+
+}
+
+\frame{\frametitle{Further reading...}
+\footnotesize{
+\begin{itemize}
+\item \href{http://store.doverpublications.com/0486453596.html}{A.~Friedman: \emph{Stochastic Differential Equations and Applications}, vol.~I \& II, Academic Press (1975)};
+\item \href{\webDOI/10.1007/978-3-662-12616-5}{P.E.~Kloeden, E. Platen: \emph{Numerical Solution of Stochastic Differential Equations}, 3rd ed., Springer (1999)};
+\item \href{\webDOI/10.1007/978-3-642-14394-6}{B.K.~{\O}ksendal: \emph{Stochastic Differential Equations: An Introduction with Applications}, 6th ed., Springer (2003)};
+\item \href{\webDOI/10.1142/9789814354110}{C.~Soize: \emph{The Fokker-Planck Equation for Stochastic Dynamical Systems and its Explicit Steady State Solutions}, World Scientific (1994)};
+\item \href{\webDOI/10.1007/3-540-60214-3_51}{D.~Talay:  Simulation of stochastic differential systems. In \emph{Probabilistic Methods in Applied Physics} (P.~Kr\'ee \& W.~Wedig, eds.), pp.~54-96. Lecture Notes in Physics {\bf 451}, Springer (1995)}.
+\end{itemize}
+}
+}
+
+
+\end{document}
+
+
