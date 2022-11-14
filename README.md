@@ -8,4 +8,4 @@ Graduate course on advanced stochastic dynamics taught at École Centrale Paris 
 
 ## REFERENCES
 [P. E. Kloeden, E. Platen. *Numerical Solution of Stochastic Differential Equations*, 3rd ed. Springer-Verlag, Berlin (1999).](https://doi.org/10.1007/978-3-662-12616-5)
-[D. Talay. Simulation of stochastic differential systems. In *Probabilistic Methods in Applied Physics* (P. Kr\'ee and W. Wedig, eds.), pp. 54-96. Lecture Notes in Physics **451**, Springer (1995)](https://doi.org/10.1007/3-540-60214-3_51)
+[D. Talay. Simulation of stochastic differential systems. In *Probabilistic Methods in Applied Physics* (P. Krée and W. Wedig, eds.), pp. 54-96. Lecture Notes in Physics **451**, Springer, Berlin (1995)](https://doi.org/10.1007/3-540-60214-3_51)
